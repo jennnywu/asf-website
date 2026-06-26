@@ -261,14 +261,14 @@ svg{display:inline-block;vertical-align:middle;flex-shrink:0}
 }
 </style>
 <style id="pw-gate-style">
-#pw-gate{position:fixed;inset:0;background:#111;z-index:99999;display:flex;align-items:center;justify-content:center}
-#pw-box{background:#fff;border-radius:8px;padding:48px 40px;width:100%;max-width:340px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.5)}
+#pw-gate{position:fixed;top:0;right:0;bottom:0;left:0;background:#111;z-index:99999;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+#pw-box{background:#fff;border-radius:8px;padding:40px 32px;width:calc(100% - 48px);max-width:340px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.5)}
 #pw-logo{font-size:17px;font-weight:700;color:#581409;margin-bottom:4px;font-family:Georgia,serif;letter-spacing:.01em}
 #pw-sub{font-size:12.5px;color:#999;margin-bottom:26px}
-#pw-input{width:100%;padding:11px 14px;border:1.5px solid #ddd;border-radius:4px;font-size:15px;text-align:center;letter-spacing:.12em;outline:none;box-sizing:border-box;font-family:inherit}
+#pw-input{width:100%;padding:11px 14px;border:1.5px solid #ddd;border-radius:4px;font-size:16px;text-align:center;letter-spacing:.12em;outline:none;box-sizing:border-box;font-family:inherit;-webkit-appearance:none;appearance:none}
 #pw-input:focus{border-color:#581409}
-#pw-btn{width:100%;margin-top:10px;padding:12px;background:#581409;color:#fff;border:none;border-radius:4px;font-size:13.5px;font-weight:600;cursor:pointer;font-family:inherit;letter-spacing:.03em}
-#pw-btn:hover{background:#9B2616}
+#pw-btn{width:100%;margin-top:10px;padding:13px;background:#581409;color:#fff;border:none;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;letter-spacing:.03em;-webkit-appearance:none;appearance:none;touch-action:manipulation}
+#pw-btn:hover,#pw-btn:active{background:#9B2616}
 #pw-err{color:#b00;font-size:12px;margin-top:10px;min-height:16px}
 </style></head>
 <body>
@@ -1249,11 +1249,13 @@ backBtn.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smoot
   var gate=document.getElementById('pw-gate');
   if(sessionStorage.getItem('asf_auth')==='1'){gate.remove();return;}
   document.body.style.overflow='hidden';
+  document.body.style.position='fixed';
+  document.body.style.width='100%';
+  function unlock(){document.body.style.overflow='';document.body.style.position='';document.body.style.width='';gate.style.display='none';gate.remove();}
   function attempt(){
     if(document.getElementById('pw-input').value==='asfgym'){
       sessionStorage.setItem('asf_auth','1');
-      document.body.style.overflow='';
-      gate.remove();
+      unlock();
     } else {
       document.getElementById('pw-err').textContent='Incorrect password — try again.';
       document.getElementById('pw-input').value='';
@@ -1261,7 +1263,7 @@ backBtn.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smoot
     }
   }
   document.getElementById('pw-btn').addEventListener('click',attempt);
-  document.getElementById('pw-input').addEventListener('keydown',function(e){if(e.key==='Enter')attempt();});
+  document.getElementById('pw-input').addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)attempt();});
   setTimeout(function(){document.getElementById('pw-input').focus();},50);
 })();
 </script>
