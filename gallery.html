@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Browse photos of our gym facility, recreational classes, camps, and competitive team at Academy Sport and Fitness in Richmond Hill.">
+<meta property="og:site_name" content="Academy Sport and Fitness">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://academysportfitness.ca/gallery.html">
+<meta property="og:title" content="Gallery | Academy Sport and Fitness">
+<meta property="og:description" content="Browse photos of our gym facility, recreational classes, camps, and competitive team at Academy Sport and Fitness in Richmond Hill.">
+<meta property="og:image" content="https://academysportfitness.ca/assets/web/logo.png">
+<meta property="og:locale" content="en_CA">
+<link rel="icon" href="assets/web/logo.png" type="image/png">
+<title>Gallery | Academy Sport and Fitness</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --seashell:      #FCF0EE;
+  --almond-silk:   #DAC9C6;
+  --brick-red:     #A93D2B;
+  --oxidized-iron: #9B2616;
+  --dark-garnet:   #581409;
+  --white:         #FFFFFF;
+  --text-dark:     #1A1A1A;
+  --text-mid:      #444444;
+  --nav-width:     240px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;font-size:16px;color:var(--text-dark);background:var(--white);line-height:1.6}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--brick-red)}
+svg{display:inline-block;vertical-align:middle;flex-shrink:0}
+
+.site-wrapper{display:flex;min-height:100vh}
+#main-content{flex:1;min-width:0;margin-left:var(--nav-width)}
+
+/* ── SIDEBAR NAV ── */
+#site-nav{position:fixed;top:0;left:0;width:var(--nav-width);height:100vh;background:var(--dark-garnet);display:flex;flex-direction:column;overflow-y:auto;z-index:1000;box-shadow:2px 0 16px rgba(0,0,0,.2);scrollbar-width:none}
+#site-nav::-webkit-scrollbar{display:none}
+.nav-logo{display:flex;align-items:center;gap:10px;padding:24px 20px 20px;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-logo-icon{width:64px;height:48px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.nav-logo-icon img{width:100%;height:100%;object-fit:contain}
+.nav-logo-text strong{display:block;font-size:13px;font-weight:600;color:#fff;line-height:1.2}
+.nav-logo-text span{display:block;font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--almond-silk);opacity:.7}
+.nav-menu{list-style:none;padding:12px 0;flex:1}
+.nav-menu>li>a,.nav-menu>li>.nav-parent{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;padding:11px 20px;color:var(--almond-silk);text-decoration:none;font-size:13px;font-weight:500;background:none;border:none;font-family:inherit;cursor:pointer;text-align:left;transition:background .15s,color .15s;border-left:3px solid transparent}
+.nav-menu>li>a:hover,.nav-menu>li>.nav-parent:hover{background:rgba(255,255,255,.06);color:#fff}
+.nav-menu>li.active>a{color:#fff;background:rgba(255,255,255,.08);border-left-color:var(--brick-red)}
+.nav-chevron{display:flex;transition:transform .25s;opacity:1}
+.nav-parent[aria-expanded="true"] .nav-chevron{transform:rotate(180deg)}
+.nav-dropdown{list-style:none;background:rgba(0,0,0,.18);overflow:hidden;max-height:0;opacity:0;transition:max-height .28s ease,opacity .2s ease}
+.nav-dropdown.open{max-height:400px;opacity:1}
+.nav-dropdown li a{display:block;padding:9px 20px 9px 32px;color:var(--almond-silk);text-decoration:none;font-size:12px;opacity:.8;transition:background .15s,opacity .15s;border-left:3px solid transparent}
+.nav-dropdown li a:hover{background:rgba(255,255,255,.06);opacity:1;color:#fff}
+.nav-dropdown li.active a{color:#fff;border-left-color:var(--brick-red);opacity:1}
+.nav-policy-btn{display:inline-flex!important;align-items:center;gap:6px;margin:6px 20px 8px 20px;border:1px solid rgba(255,255,255,.3)!important;border-radius:20px;color:var(--almond-silk);text-decoration:none;font-size:11px;font-weight:600;padding:4px 8px;transition:background .15s,border-color .15s;opacity:1!important;background:none}
+.nav-policy-btn:hover{background:rgba(255,255,255,.1)!important;border-color:rgba(255,255,255,.55)!important;color:#fff!important}
+.nav-portal-btn{display:flex!important;align-items:center;justify-content:center;gap:7px;width:fit-content;margin:5px auto 8px;border:1.5px solid rgba(255,255,255,.4)!important;border-radius:20px;color:#fff;text-decoration:none;font-size:12px;font-weight:600;padding:5px 16px;transition:background .15s,border-color .15s;background:rgba(255,255,255,.06)}
+.nav-portal-btn:hover{background:rgba(255,255,255,.15)!important;border-color:rgba(255,255,255,.65)!important;color:#fff!important}
+.nav-contact{padding:16px 20px;border-top:1px solid rgba(255,255,255,.08);font-size:13px;line-height:1.7;color:rgba(255,255,255,.65)}
+
+.nav-contact a{color:rgba(255,255,255,.55);text-decoration:none}
+.nav-contact a:hover{color:#fff}
+.nav-cta-wrap{padding:16px 20px 24px;border-top:1px solid rgba(255,255,255,.08)}
+.nav-cta{display:block;text-align:center;background:var(--brick-red);color:#fff;padding:11px 16px;border-radius:4px;font-size:13px;font-weight:600;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--oxidized-iron)}
+/* ── MOBILE TOPBAR ── */
+.mobile-topbar{display:none;position:fixed;top:0;left:0;right:0;height:56px;background:var(--dark-garnet);z-index:1100;align-items:center;justify-content:space-between;padding:0 16px;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.mobile-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mobile-logo-icon{width:36px;height:28px;flex-shrink:0}
+.mobile-logo-icon img{width:100%;height:100%;object-fit:contain}
+.mobile-logo-name{font-size:13px;font-weight:600;color:#fff;line-height:1.2}
+.nav-hamburger{background:none;border:none;cursor:pointer;padding:8px;display:flex;flex-direction:column;gap:5px;-webkit-tap-highlight-color:transparent}
+.nav-hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:transform .25s,opacity .25s}
+.nav-overlay{display:none}
+
+/* ── PAGE HERO ── */
+.page-hero{background:var(--dark-garnet);color:var(--white);padding:56px 64px 48px}
+.page-hero .section-eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--almond-silk);margin-bottom:10px;opacity:.8}
+.page-hero-tagline{font-size:16px;color:rgba(255,255,255,.75);margin-top:10px;line-height:1.55;max-width:560px}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.15;margin:0}
+
+/* ── GALLERY SECTION ── */
+.gallery-section{padding:48px 64px 80px}
+
+/* ── FILTERS ── */
+.filter-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:40px}
+.filter-btn{background:none;border:1.5px solid var(--almond-silk);color:var(--text-mid);font-family:'Inter',sans-serif;font-size:13px;font-weight:500;padding:7px 18px;border-radius:20px;cursor:pointer;transition:background .15s,border-color .15s,color .15s;-webkit-tap-highlight-color:transparent}
+.filter-btn:hover{border-color:var(--brick-red);color:var(--brick-red)}
+.filter-btn.active{background:var(--brick-red);border-color:var(--brick-red);color:#fff}
+.filter-count{font-size:11px;opacity:.6;margin-left:4px}
+
+/* ── GRID ── */
+.gallery-grid{columns:3;column-gap:14px}
+.gallery-item{break-inside:avoid;margin-bottom:14px;border-radius:6px;overflow:hidden;cursor:pointer;position:relative}
+.gallery-item img{width:100%;height:auto;display:block;transition:transform .3s ease}
+.gallery-item:hover img{transform:scale(1.03)}
+.gallery-item .placeholder-box{width:100%;background:var(--almond-silk);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:rgba(88,20,9,.45);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:background .2s}
+.gallery-item:hover .placeholder-box{background:#c9b5b2}
+.gallery-item.hidden{display:none}
+
+/* ── LIGHTBOX ── */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:2000;align-items:center;justify-content:center}
+.lightbox.open{display:flex}
+.lb-img-wrap{max-width:88vw;max-height:88vh;display:flex;align-items:center;justify-content:center}
+.lb-img-wrap img,.lb-img-wrap .lb-placeholder{max-width:100%;max-height:88vh;border-radius:4px;display:block}
+.lb-placeholder{width:480px;height:360px;background:rgba(218,201,198,.15);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:rgba(255,255,255,.4);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.lb-close{position:absolute;top:18px;right:22px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:50%;color:#fff;font-size:22px;line-height:1;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s}
+.lb-close:hover{background:rgba(255,255,255,.25)}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;padding:0}
+.lb-prev{left:20px}.lb-next{right:20px}
+.lb-prev:hover,.lb-next:hover{background:rgba(255,255,255,.25)}
+.lb-counter{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.55);font-size:12px;font-weight:500;letter-spacing:.08em}
+.lb-label{position:absolute;top:18px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.85);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;background:rgba(0,0,0,.4);padding:4px 12px;border-radius:12px}
+
+/* ── FOOTER ── */
+#site-footer{background:var(--dark-garnet);color:var(--almond-silk);padding:56px 24px 0;margin-left:var(--nav-width);width:calc(100% - var(--nav-width))}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1.2fr 1.2fr 1.2fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-brand .footer-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.footer-logo-icon{width:64px;height:48px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.footer-logo-icon img{width:100%;height:100%;object-fit:contain}
+.footer-logo-text strong{display:block;font-size:15px;font-weight:700;color:#fff;line-height:1.2}
+.footer-brand>p{font-size:13px;line-height:1.7;color:rgba(255,255,255,.55);max-width:240px;margin-bottom:16px}
+.footer-logos{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.footer-ig-btn{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.65);transition:border-color .2s,color .2s}
+.footer-ig-btn:hover{border-color:#fff;color:#fff}
+.logo-go{height:40px;width:auto;opacity:.65;filter:brightness(0) invert(1)}.logo-nccp{height:36px;width:auto;background:rgba(255,255,255,.9);border-radius:4px;padding:2px 8px;object-fit:contain}
+.footer-col h4{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:14px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:8px}
+.footer-col ul li a{color:rgba(255,255,255,.55);text-decoration:none;font-size:13px;transition:color .15s}
+.footer-col ul li a:hover{color:#fff}
+.footer-contact-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:13px}
+.footer-contact-item a{color:rgba(255,255,255,.55);text-decoration:none}
+.footer-contact-item a:hover{color:#fff}
+.footer-hours{margin-top:14px;font-size:13px;opacity:.75;line-height:1.8}
+.footer-hours h5{display:flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin-bottom:8px;opacity:1}
+.footer-bottom{max-width:1100px;margin:0 auto;padding:18px 0;display:flex;justify-content:space-between;align-items:center;font-size:12px;opacity:.5}
+.footer-bottom-links{display:flex;gap:20px}
+.footer-bottom-links a{color:rgba(255,255,255,.35);text-decoration:none}
+.footer-bottom-links a:hover{color:rgba(255,255,255,.65)}
+
+/* ── MOBILE ── */
+@media(max-width:1024px){
+  .mobile-topbar{display:flex}
+  #site-nav{width:100%;transform:none;opacity:0;pointer-events:none;background:rgba(155,38,22,0.95);align-items:center;justify-content:center;transition:opacity .25s ease;box-shadow:none;overflow:hidden}
+  #site-nav.nav-open{opacity:1;pointer-events:all}
+  #nav-overlay{display:none!important}
+  #site-nav .nav-logo,#site-nav .nav-contact,#site-nav .nav-cta-wrap{display:none}
+  .nav-menu{text-align:center;padding:0;width:100%;flex:none}
+  .nav-menu>li>a,.nav-menu>li>.nav-parent,.nav-dropdown li a{-webkit-tap-highlight-color:transparent}
+  .nav-menu>li>a,.nav-menu>li>.nav-parent{font-size:19px;padding:13px 24px;justify-content:center;border-left:none!important;letter-spacing:.01em}
+  .nav-menu>li.active>a{border-left-color:transparent!important;background:rgba(255,255,255,.1)}
+  .nav-dropdown{background:rgba(0,0,0,.18)}
+  .nav-dropdown li a{text-align:center;padding-left:20px;border-left:none!important}
+ .nav-portal-btn{margin:6px auto 8px!important;display:inline-flex!important;width:auto}
+  #main-content{margin-left:0;padding-top:56px}
+  #site-footer{margin-left:0;width:100%}
+  .page-hero{padding:40px 24px 32px}
+  .gallery-section{padding:32px 24px 60px}
+  .filter-bar{gap:6px;margin-bottom:28px}
+  .filter-btn{font-size:12px;padding:6px 14px}
+  .gallery-grid{columns:2;column-gap:10px}
+  .gallery-item{margin-bottom:10px}
+  .footer-inner{grid-template-columns:1fr;gap:28px}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+  .footer-bottom-links{justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:480px){
+  .gallery-grid{columns:3;column-gap:6px}
+  .gallery-item{margin-bottom:6px}
+}
+/* Back to top */
+#back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--brick-red);color:#fff;border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(0,0,0,.25);opacity:0;transform:translateY(10px);transition:opacity .25s,transform .25s,background .15s;z-index:900;pointer-events:none}
+#back-to-top.visible{opacity:1;transform:translateY(0);pointer-events:all}
+#back-to-top:hover{background:var(--oxidized-iron)}</style>
+</head>
+<body>
+
+<div class="mobile-topbar">
+  <a href="index.html" class="mobile-logo">
+    <div class="mobile-logo-icon"><img src="assets/web/logo.png" alt="ASF Logo"></div>
+    <span class="mobile-logo-name">Academy Sport and Fitness</span>
+  </a>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+<div class="nav-overlay" id="nav-overlay"></div>
+
+<div class="site-wrapper">
+
+<!-- ── SIDEBAR NAV ── -->
+<nav id="site-nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon"><img src="assets/web/logo.png" alt="ASF Logo"></div>
+    <div class="nav-logo-text">
+      <strong>Academy Sport<br>and Fitness</strong>
+    </div>
+  </a>
+
+  <ul class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li>
+      <button class="nav-parent" aria-expanded="false">
+        About
+        <span class="nav-chevron">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5H7z"/></svg>
+        </span>
+      </button>
+      <ul class="nav-dropdown">
+        <li><a href="our-facility.html">Our Facility</a></li>
+        <li><a href="location-contact.html">Location &amp; Contact</a></li>
+        <li><a href="benefits.html">Benefits</a></li>
+        <li><a href="coaching-team.html">Coaching Team</a></li>
+        <li><a href="https://academysportfitness.ca/wp-content/uploads/2025/06/Academy-Policies-25-26.pdf" target="_blank" rel="noopener noreferrer">Policies (PDF)&nbsp;<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="nav-parent" aria-expanded="false">
+        Programs
+        <span class="nav-chevron">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5H7z"/></svg>
+        </span>
+      </button>
+      <ul class="nav-dropdown">
+        <li><a href="which-program.html">Find the Right Program</a></li>
+        <li><a href="camp.html">Camps</a></li>
+        <li><a href="recreational-classes.html">Recreational Classes</a></li>
+        <li><a href="xcel.html">Xcel / Advanced</a></li>
+        <li><a href="competitive-team.html">Competitive Team</a></li>
+        <li><a href="birthday.html">Birthday Parties</a></li>
+      </ul>
+    </li>
+    <li class="active"><a href="gallery.html">Gallery</a></li>
+    <li>
+      <button class="nav-parent" aria-expanded="false">
+        Family Portal
+        <span class="nav-chevron">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5H7z"/></svg>
+        </span>
+      </button>
+      <ul class="nav-dropdown">
+        <li><a href="https://app.jackrabbitclass.com/regv2.asp?id=540626" target="_blank" rel="noopener noreferrer">Sign Up&nbsp;<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></li>
+        <li><a href="https://app.jackrabbitclass.com/jr3.0/ParentPortal/Login?orgID=540626" target="_blank" rel="noopener noreferrer">Log In&nbsp;<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="nav-contact">
+    <p><a href="https://maps.google.com/?q=40+Vogell+Road+Unit+32+Richmond+Hill+ON+L4B+3N6" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none">40 Vogell Road, Unit #32<br>Richmond Hill, Ontario L4B 3N6</a></p>
+    <p><a href="tel:9057800913">905-780-0913</a></p>
+    <p><a href="mailto:academysportfitness@gmail.com">academysportfitness@gmail.com</a></p>
+  </div>
+
+  <div class="nav-cta-wrap">
+    <a href="https://app.jackrabbitclass.com/regv2.asp?id=540626" class="nav-cta" target="_blank" rel="noopener noreferrer">Register Now</a>
+  </div>
+</nav>
+
+<!-- ── MAIN ── -->
+<main id="main-content">
+
+  <div class="page-hero">
+    <p class="section-eyebrow">ASF in Action</p>
+    <h1>Gallery</h1>
+    <p class="page-hero-tagline">A look inside the gym and our programs</p>
+  </div>
+
+  <div class="gallery-section">
+
+    <!-- Filter Bar -->
+    <div class="filter-bar" id="filter-bar">
+      <button class="filter-btn active" data-filter="all">All <span class="filter-count" id="count-all"></span></button>
+      <button class="filter-btn" data-filter="facility">Facility <span class="filter-count" id="count-facility"></span></button>
+      <button class="filter-btn" data-filter="camps">Camps <span class="filter-count" id="count-camps"></span></button>
+      <button class="filter-btn" data-filter="recreational">Recreational <span class="filter-count" id="count-recreational"></span></button>
+      <button class="filter-btn" data-filter="competitive">Competitive <span class="filter-count" id="count-competitive"></span></button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid" id="gallery-grid">
+
+      <!-- FACILITY (real photos) -->
+      <div class="gallery-item" data-category="facility" data-src="assets/photos/facility/2-facility.jpg" data-label="Facility">
+        <img src="assets/photos/facility/2-facility.jpg" alt="ASF gymnasium overview showing floor and equipment">
+      </div>
+      <div class="gallery-item" data-category="facility" data-src="assets/photos/facility/3-facility.jpg" data-label="Facility">
+        <img src="assets/photos/facility/3-facility.jpg" alt="Gymnastics bars and beam apparatus at ASF">
+      </div>
+      <div class="gallery-item" data-category="facility" data-src="assets/photos/facility/4-facility.jpg" data-label="Facility">
+        <img src="assets/photos/facility/4-facility.jpg" alt="ASF gym floor and spring floor area">
+      </div>
+      <div class="gallery-item" data-category="facility" data-src="assets/photos/facility/5-facility.jpg" data-label="Facility">
+        <img src="assets/photos/facility/5-facility.jpg" alt="Foam pit and high bar at Academy Sport and Fitness">
+      </div>
+      <div class="gallery-item" data-category="facility" data-src="assets/photos/facility/6-facility.jpg" data-label="Facility">
+        <img src="assets/photos/facility/6-facility.jpg" alt="Balance beams and training area at ASF">
+      </div>
+      <div class="gallery-item" data-category="facility" data-src="assets/photos/facility/7-facility.jpg" data-label="Facility">
+        <img src="assets/photos/facility/7-facility.jpg" alt="Vault and runway at Academy Sport and Fitness">
+      </div>
+      <div class="gallery-item" data-category="facility" data-src="assets/photos/facility/8-facility.jpg" data-label="Facility">
+        <img src="assets/photos/facility/8-facility.jpg" alt="ASF gymnasium — full view of training facility">
+      </div>
+      <div class="gallery-item" data-category="facility" data-src="assets/photos/facility/1-facility.jpg" data-label="Facility">
+        <img src="assets/photos/facility/1-facility.jpg" alt="Entrance and lobby of Academy Sport and Fitness">
+      </div>
+
+      <!-- CAMPS (placeholders) -->
+      <div class="gallery-item" data-category="camps" data-placeholder data-label="Camps">
+        <div class="placeholder-box" style="aspect-ratio:4/3">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".45"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          Camps
+        </div>
+      </div>
+      <div class="gallery-item" data-category="camps" data-placeholder data-label="Camps">
+        <div class="placeholder-box" style="aspect-ratio:3/4"></div>
+      </div>
+      <div class="gallery-item" data-category="camps" data-placeholder data-label="Camps">
+        <div class="placeholder-box" style="aspect-ratio:4/3"></div>
+      </div>
+      <div class="gallery-item" data-category="camps" data-placeholder data-label="Camps">
+        <div class="placeholder-box" style="aspect-ratio:1/1"></div>
+      </div>
+      <div class="gallery-item" data-category="camps" data-placeholder data-label="Camps">
+        <div class="placeholder-box" style="aspect-ratio:4/3"></div>
+      </div>
+      <div class="gallery-item" data-category="camps" data-placeholder data-label="Camps">
+        <div class="placeholder-box" style="aspect-ratio:3/4"></div>
+      </div>
+
+      <!-- RECREATIONAL (placeholders) -->
+      <div class="gallery-item" data-category="recreational" data-placeholder data-label="Recreational">
+        <div class="placeholder-box" style="aspect-ratio:4/3">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".45"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          Recreational
+        </div>
+      </div>
+      <div class="gallery-item" data-category="recreational" data-placeholder data-label="Recreational">
+        <div class="placeholder-box" style="aspect-ratio:1/1"></div>
+      </div>
+      <div class="gallery-item" data-category="recreational" data-placeholder data-label="Recreational">
+        <div class="placeholder-box" style="aspect-ratio:3/4"></div>
+      </div>
+      <div class="gallery-item" data-category="recreational" data-placeholder data-label="Recreational">
+        <div class="placeholder-box" style="aspect-ratio:4/3"></div>
+      </div>
+      <div class="gallery-item" data-category="recreational" data-placeholder data-label="Recreational">
+        <div class="placeholder-box" style="aspect-ratio:4/3"></div>
+      </div>
+
+      <!-- COMPETITIVE (placeholders) -->
+      <div class="gallery-item" data-category="competitive" data-placeholder data-label="Competitive Team">
+        <div class="placeholder-box" style="aspect-ratio:3/4">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".45"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          Competitive
+        </div>
+      </div>
+      <div class="gallery-item" data-category="competitive" data-placeholder data-label="Competitive Team">
+        <div class="placeholder-box" style="aspect-ratio:4/3"></div>
+      </div>
+      <div class="gallery-item" data-category="competitive" data-placeholder data-label="Competitive Team">
+        <div class="placeholder-box" style="aspect-ratio:1/1"></div>
+      </div>
+      <div class="gallery-item" data-category="competitive" data-placeholder data-label="Competitive Team">
+        <div class="placeholder-box" style="aspect-ratio:4/3"></div>
+      </div>
+      <div class="gallery-item" data-category="competitive" data-placeholder data-label="Competitive Team">
+        <div class="placeholder-box" style="aspect-ratio:3/4"></div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+</div><!-- .site-wrapper -->
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lb-close">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <button class="lb-prev" id="lb-prev">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <div class="lb-img-wrap" id="lb-content"></div>
+  <button class="lb-next" id="lb-next">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+  <div class="lb-label" id="lb-label"></div>
+  <div class="lb-counter" id="lb-counter"></div>
+</div>
+
+<footer id="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="footer-logo-icon"><img src="assets/web/logo.png" alt="ASF Logo"></div>
+        <div class="footer-logo-text">
+          <strong>Academy Sport<br>and Fitness</strong>
+            </div>
+      </div>
+      <p>We foster complete child development - physically &amp; emotionally. Serving Richmond Hill, Markham, and the Greater York Region.</p>
+      <div class="footer-logos">
+        <a href="https://www.instagram.com/asfgymnastics/" class="footer-ig-btn" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <img src="assets/web/logo-recasf.png" alt="Gymnastics Ontario" class="logo-go">
+        <img src="assets/web/logo-nccp.png" alt="National Coaching Certification Program" class="logo-nccp">
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="recreational-classes.html">Recreational Classes</a></li>
+        <li><a href="competitive-team.html">Competitive Team</a></li>
+        <li><a href="xcel.html">Xcel / Advanced</a></li>
+        <li><a href="camp.html#panel-summer">Summer Camp</a></li>
+        <li><a href="camp.html#panel-winter">Winter Camp</a></li>
+        <li><a href="camp.html#panel-marchbreak">March Break Camp</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Location &amp; Contact</h4>
+      <div class="footer-contact-item"><span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span><span><a href="https://maps.google.com/?q=40+Vogell+Road+Unit+32+Richmond+Hill+ON+L4B+3N6" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none">40 Vogell Road, Unit #32<br>Richmond Hill, Ontario L4B 3N6</a></span></div>
+      <div class="footer-contact-item"><span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg></span><a href="tel:9057800913">905-780-0913</a></div>
+      <div class="footer-contact-item"><span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span><a href="mailto:academysportfitness@gmail.com">academysportfitness@gmail.com</a></div>
+      <div class="footer-hours">
+        <h5><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> Open Hours</h5>
+        Mon, Tue, Thu: 12pm–8:30pm<br>Wed: 2:30pm–8:30pm<br>Fri: 12pm–8pm<br>Sat–Sun: 9:30am–5pm
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="our-facility.html">About ASF</a></li>
+        <li><a href="coaching-team.html">Coaching Team</a></li>
+        <li><a href="https://app.jackrabbitclass.com/jr3.0/ParentPortal/Login?orgID=540626" target="_blank" rel="noopener noreferrer">Family Portal</a></li>
+        <li><a href="https://app.jackrabbitclass.com/jr3.0/TimeClock/StaffLogin?OrgId=540626&amp;sId=6b551da4-ce01-4f84-93cd-3070660bcdcf&amp;loc=ACADEMY" target="_blank" rel="noopener noreferrer">Staff Portal</a></li>
+        <li><a href="https://academysportfitness.ca/wp-content/uploads/2025/06/Academy-Policies-25-26.pdf" target="_blank" rel="noopener noreferrer">Policies (PDF)</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeGI9-S27g814u1JuJN66jXMPEFzDr7q_HO4TTykKR-nlzwiQ/viewform?usp=send_form" target="_blank" rel="noopener noreferrer">Assessment Form</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Academy Sport and Fitness. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+// ── Nav dropdowns ──
+document.querySelectorAll('.nav-parent').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    const dropdown = btn.nextElementSibling;
+    document.querySelectorAll('.nav-parent').forEach(other => {
+      if (other !== btn) {
+        other.setAttribute('aria-expanded', 'false');
+        other.nextElementSibling?.classList.remove('open');
+      }
+    });
+    btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    dropdown?.classList.toggle('open', !expanded);
+  });
+});
+
+// ── Hamburger ──
+const hamburger = document.getElementById('nav-hamburger');
+const siteNav = document.getElementById('site-nav');
+const overlay = document.getElementById('nav-overlay');
+function openNav() { siteNav.classList.add('nav-open'); hamburger.setAttribute('aria-expanded','true'); }
+function closeNav() { siteNav.classList.remove('nav-open'); hamburger.setAttribute('aria-expanded','false'); }
+hamburger?.addEventListener('click', () => siteNav.classList.contains('nav-open') ? closeNav() : openNav());
+overlay?.addEventListener('click', closeNav);
+
+// ── Gallery filter ──
+const allItems = [...document.querySelectorAll('.gallery-item')];
+
+function updateCounts() {
+  const cats = ['all','facility','camps','recreational','competitive'];
+  cats.forEach(cat => {
+    const el = document.getElementById('count-' + cat);
+    if (!el) return;
+    const n = cat === 'all' ? allItems.length : allItems.filter(i => i.dataset.category === cat).length;
+    el.textContent = '(' + n + ')';
+  });
+}
+updateCounts();
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    allItems.forEach(item => {
+      item.classList.toggle('hidden', f !== 'all' && item.dataset.category !== f);
+    });
+  });
+});
+
+// ── Lightbox ──
+const lightbox = document.getElementById('lightbox');
+const lbContent = document.getElementById('lb-content');
+const lbCounter = document.getElementById('lb-counter');
+const lbLabel = document.getElementById('lb-label');
+let lbItems = [];
+let lbIndex = 0;
+
+function getVisibleItems() {
+  return allItems.filter(i => !i.classList.contains('hidden'));
+}
+
+function lbRender(i) {
+  const item = lbItems[i];
+  lbContent.innerHTML = '';
+  if (item.dataset.placeholder !== undefined) {
+    const ph = document.createElement('div');
+    ph.className = 'lb-placeholder';
+    ph.innerHTML = `<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Photo coming soon</span>`;
+    lbContent.appendChild(ph);
+  } else {
+    const img = document.createElement('img');
+    img.src = item.dataset.src;
+    img.alt = item.dataset.label || '';
+    lbContent.appendChild(img);
+  }
+  lbLabel.textContent = item.dataset.label || '';
+  lbCounter.textContent = (i + 1) + ' / ' + lbItems.length;
+}
+
+function lbOpen(item) {
+  lbItems = getVisibleItems();
+  lbIndex = lbItems.indexOf(item);
+  lbRender(lbIndex);
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function lbClose() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function lbNav(dir) {
+  lbIndex = (lbIndex + dir + lbItems.length) % lbItems.length;
+  lbRender(lbIndex);
+}
+
+allItems.forEach(item => {
+  item.addEventListener('click', () => lbOpen(item));
+});
+
+document.getElementById('lb-close').addEventListener('click', lbClose);
+document.getElementById('lb-prev').addEventListener('click', () => lbNav(-1));
+document.getElementById('lb-next').addEventListener('click', () => lbNav(1));
+lightbox.addEventListener('click', e => { if (e.target === lightbox) lbClose(); });
+
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') lbClose();
+  if (e.key === 'ArrowLeft') lbNav(-1);
+  if (e.key === 'ArrowRight') lbNav(1);
+});
+</script>
+
+<button id="back-to-top" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+</button></body>
+</html>
