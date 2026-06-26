@@ -9,7 +9,7 @@
   </div>
 
   <div class="birthday-intro">
-    <p>Celebrate your child's birthday at Academy Sport and Fitness! Our gym parties give kids an action-packed gymnastics experience, followed by time in a dedicated party room. Available Sundays from September to June — no enrollment in regular classes required.</p>
+    <p>Celebrate your child's birthday at Academy of Sport and Fitness! Our gym parties give kids an action-packed gymnastics experience, followed by time in a dedicated party room. Available Sundays from September to June — no enrollment in regular classes required.</p>
   </div>
 
   <div class="birthday-highlights">

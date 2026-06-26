@@ -15,7 +15,7 @@
       <div class="map-wrap">
         <iframe
           src="https://www.google.com/maps?q=40+Vogell+Road+Unit+32+Richmond+Hill+Ontario+L4B+3N6&output=embed"
-          title="Academy Sport and Fitness location"
+          title="Academy of Sport and Fitness location"
           allowfullscreen
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">

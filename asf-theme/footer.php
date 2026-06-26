@@ -11,7 +11,7 @@
         <?php if ( has_custom_logo() ) :
           the_custom_logo();
         else : ?>
-          <div class="footer-logo-icon"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo.jpg" alt="<?php esc_attr_e( 'Academy Sport and Fitness', 'asf' ); ?>"></div>
+          <div class="footer-logo-icon"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo.jpg" alt="<?php esc_attr_e( 'Academy of Sport and Fitness', 'asf' ); ?>"></div>
           <div class="footer-logo-text">
             <strong><?php bloginfo( 'name' ); ?></strong>
             <span><?php bloginfo( 'description' ); ?></span>

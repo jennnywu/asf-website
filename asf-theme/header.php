@@ -18,7 +18,7 @@
       <?php if ( has_custom_logo() ) :
         the_custom_logo();
       else : ?>
-        <div class="nav-logo-icon"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo.jpg" alt="<?php esc_attr_e( 'Academy Sport and Fitness', 'asf' ); ?>"></div>
+        <div class="nav-logo-icon"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo.jpg" alt="<?php esc_attr_e( 'Academy of Sport and Fitness', 'asf' ); ?>"></div>
         <div class="nav-logo-text">
           <strong><?php bloginfo( 'name' ); ?></strong>
 
@@ -37,7 +37,7 @@
 
     <!-- Contact info above Register CTA -->
     <div class="nav-contact">
-      <p class="nav-contact-name"><?php echo esc_html( asf_opt( 'asf_gym_name', 'Academy Sport and Fitness' ) ); ?></p>
+      <p class="nav-contact-name"><?php echo esc_html( asf_opt( 'asf_gym_name', 'Academy of Sport and Fitness' ) ); ?></p>
       <p><?php echo nl2br( esc_html( asf_opt( 'asf_address', "40 Vogell Road, Unit #32\nRichmond Hill, Ontario L4B 3N6\n(located off Hwy 404 & 16th Ave)" ) ) ); ?></p>
       <p><a href="tel:<?php echo esc_attr( preg_replace( '/\D/', '', asf_opt( 'asf_phone', '9057800913' ) ) ); ?>"><?php echo esc_html( asf_opt( 'asf_phone', '905-780-0913' ) ); ?></a></p>
       <p><a href="mailto:<?php echo esc_attr( asf_opt( 'asf_email', 'academysportfitness@gmail.com' ) ); ?>"><?php echo esc_html( asf_opt( 'asf_email', 'academysportfitness@gmail.com' ) ); ?></a></p>
