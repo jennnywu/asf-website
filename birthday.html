@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -14,72 +14,8 @@
 <link rel="icon" href="assets/web/logo.png" type="image/png">
 <title>Birthday Parties | Academy of Sport and Fitness</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
 <style>
-:root {
-  --seashell:      #FCF0EE;
-  --almond-silk:   #DAC9C6;
-  --brick-red:     #A93D2B;
-  --oxidized-iron: #9B2616;
-  --dark-garnet:   #581409;
-  --white:         #FFFFFF;
-  --text-dark:     #1A1A1A;
-  --text-mid:      #444444;
-  --nav-width:     240px;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',sans-serif;font-size:16px;color:var(--text-dark);background:var(--white);line-height:1.6}
-img{max-width:100%;height:auto;display:block}
-a{color:var(--brick-red)}
-svg{display:inline-block;vertical-align:middle;flex-shrink:0}
-
-.site-wrapper{display:flex;min-height:100vh}
-#main-content{flex:1;min-width:0;margin-left:var(--nav-width)}
-
-.btn-red{display:inline-block;background:var(--brick-red);color:#fff;padding:12px 24px;border-radius:4px;font-size:13px;font-weight:600;text-decoration:none;transition:background .2s}
-.btn-red:hover{background:var(--oxidized-iron);color:#fff}
-
-/* ── SIDEBAR NAV ── */
-#site-nav{position:fixed;top:0;left:0;width:var(--nav-width);height:100vh;background:var(--dark-garnet);display:flex;flex-direction:column;overflow-y:auto;z-index:1000;box-shadow:2px 0 16px rgba(0,0,0,.2);scrollbar-width:none}
-#site-nav::-webkit-scrollbar{display:none}
-.nav-logo{display:flex;align-items:center;gap:10px;padding:24px 20px 20px;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.08)}
-.nav-logo-icon{width:64px;height:48px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
-.nav-logo-icon img{width:100%;height:100%;object-fit:contain}
-.nav-logo-text strong{display:block;font-size:13px;font-weight:600;color:#fff;line-height:1.2}
-.nav-menu{list-style:none;padding:12px 0;flex:1}
-.nav-menu>li>a,.nav-menu>li>.nav-parent{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;padding:11px 20px;color:var(--almond-silk);text-decoration:none;font-size:13px;font-weight:500;background:none;border:none;font-family:inherit;cursor:pointer;text-align:left;transition:background .15s,color .15s;border-left:3px solid transparent}
-.nav-menu>li>a:hover,.nav-menu>li>.nav-parent:hover{background:rgba(255,255,255,.06);color:#fff}
-.nav-menu>li.active>a{color:#fff;background:rgba(255,255,255,.08);border-left-color:var(--brick-red)}
-.nav-chevron{display:flex;transition:transform .25s;opacity:1}
-.nav-parent[aria-expanded="true"] .nav-chevron{transform:rotate(180deg)}
-.nav-dropdown{list-style:none;background:rgba(0,0,0,.18);overflow:hidden;max-height:0;opacity:0;transition:max-height .28s ease,opacity .2s ease}
-.nav-dropdown.open{max-height:400px;opacity:1}
-.nav-dropdown li a{display:block;padding:9px 20px 9px 32px;color:var(--almond-silk);text-decoration:none;font-size:12px;opacity:.8;transition:background .15s,opacity .15s;border-left:3px solid transparent}
-.nav-dropdown li a:hover{background:rgba(255,255,255,.06);opacity:1;color:#fff}
-.nav-dropdown li.active a{color:#fff;border-left-color:var(--brick-red);opacity:1}
-.nav-policy-btn{display:inline-flex!important;align-items:center;gap:6px;margin:6px 20px 8px 20px;border:1px solid rgba(255,255,255,.3)!important;border-radius:20px;color:var(--almond-silk);text-decoration:none;font-size:11px;font-weight:600;padding:4px 8px;transition:background .15s,border-color .15s;opacity:1!important;background:none}
-.nav-policy-btn:hover{background:rgba(255,255,255,.1)!important;border-color:rgba(255,255,255,.55)!important;color:#fff!important}
-.nav-portal-btn{display:flex!important;align-items:center;justify-content:center;gap:7px;width:fit-content;margin:5px auto 8px;border:1.5px solid rgba(255,255,255,.4)!important;border-radius:20px;color:#fff;text-decoration:none;font-size:12px;font-weight:600;padding:5px 16px;transition:background .15s,border-color .15s;background:rgba(255,255,255,.06)}
-.nav-portal-btn:hover{background:rgba(255,255,255,.15)!important;border-color:rgba(255,255,255,.65)!important;color:#fff!important}
-.nav-contact{padding:16px 20px;border-top:1px solid rgba(255,255,255,.08);font-size:13px;line-height:1.7;color:rgba(255,255,255,.65)}
-.nav-contact a{color:rgba(255,255,255,.55);text-decoration:none}
-.nav-contact a:hover{color:#fff}
-.nav-cta-wrap{padding:16px 20px 24px;border-top:1px solid rgba(255,255,255,.08)}
-.nav-cta{display:block;text-align:center;background:var(--brick-red);color:#fff;padding:11px 16px;border-radius:4px;font-size:13px;font-weight:600;text-decoration:none;transition:background .2s}
-.nav-cta:hover{background:var(--oxidized-iron)}
-/* ── MOBILE TOPBAR ── */
-.mobile-topbar{display:none;position:fixed;top:0;left:0;right:0;height:56px;background:var(--dark-garnet);z-index:1100;align-items:center;justify-content:space-between;padding:0 16px;box-shadow:0 2px 8px rgba(0,0,0,.2)}
-.mobile-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.mobile-logo-icon{width:36px;height:28px;flex-shrink:0}
-.mobile-logo-icon img{width:100%;height:100%;object-fit:contain}
-.mobile-logo-name{font-size:13px;font-weight:600;color:#fff;line-height:1.2}
-.nav-hamburger{background:none;border:none;cursor:pointer;padding:8px;display:flex;flex-direction:column;gap:5px;-webkit-tap-highlight-color:transparent}
-.nav-hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:transform .25s,opacity .25s}
-.nav-overlay{display:none}
-
-/* ── PAGE HERO ── */
-.page-hero{background:var(--dark-garnet);color:var(--white);padding:56px 64px 48px}
-.page-hero .section-eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--almond-silk);margin-bottom:10px;opacity:.8}
-.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.15;margin:0 0 8px}
 .page-hero-tagline{font-size:16px;color:rgba(255,255,255,.7);font-style:italic;margin:0}
 
 /* ── BIRTHDAY CONTENT ── */
@@ -113,86 +49,16 @@ svg{display:inline-block;vertical-align:middle;flex-shrink:0}
 .bday-cta p{font-size:14px;opacity:.8;margin-bottom:24px;line-height:1.7}
 .bday-cta a.btn-email{display:inline-flex;align-items:center;gap:8px;background:var(--brick-red);color:#fff;padding:13px 28px;border-radius:4px;font-size:14px;font-weight:600;text-decoration:none;transition:background .2s}
 .bday-cta a.btn-email:hover{background:var(--oxidized-iron)}
-
-/* ── FOOTER ── */
-#site-footer{background:var(--dark-garnet);color:var(--almond-silk);padding:56px 24px 0;margin-left:var(--nav-width);width:calc(100% - var(--nav-width))}
-.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1.2fr 1.2fr 1.2fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
-.footer-brand .footer-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.footer-logo-icon{width:64px;height:48px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
-.footer-logo-icon img{width:100%;height:100%;object-fit:contain}
-.footer-logo-text strong{display:block;font-size:15px;font-weight:700;color:#fff;line-height:1.2}
-.footer-brand>p{font-size:13px;line-height:1.7;color:rgba(255,255,255,.55);max-width:240px;margin-bottom:16px}
-.footer-logos{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.footer-ig-btn{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.65);transition:border-color .2s,color .2s}
-.footer-ig-btn:hover{border-color:#fff;color:#fff}
-.logo-go{height:40px;width:auto;opacity:.65;filter:brightness(0) invert(1)}.logo-nccp{height:36px;width:auto;background:rgba(255,255,255,.9);border-radius:4px;padding:2px 8px;object-fit:contain}
-.footer-col h4{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:14px}
-.footer-col ul{list-style:none}
-.footer-col ul li{margin-bottom:8px}
-.footer-col ul li a{color:rgba(255,255,255,.55);text-decoration:none;font-size:13px;transition:color .15s}
-.footer-col ul li a:hover{color:#fff}
-.footer-contact-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:13px}
-.footer-contact-item a{color:rgba(255,255,255,.55);text-decoration:none}
-.footer-contact-item a:hover{color:#fff}
-.footer-hours{margin-top:14px;font-size:13px;opacity:.75;line-height:1.8}
-.footer-hours h5{display:flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin-bottom:8px;opacity:1}
-.footer-bottom{max-width:1100px;margin:0 auto;padding:18px 0;display:flex;justify-content:space-between;align-items:center;font-size:12px;opacity:.5}
-.footer-bottom-links{display:flex;gap:20px}
-.footer-bottom-links a{color:rgba(255,255,255,.35);text-decoration:none}
-.footer-bottom-links a:hover{color:rgba(255,255,255,.65)}
-
-/* ── MOBILE ── */
 @media(max-width:1024px){
-  .mobile-topbar{display:flex}
-  #site-nav{width:100%;transform:none;opacity:0;pointer-events:none;background:rgba(155,38,22,0.95);align-items:center;justify-content:center;transition:opacity .25s ease;box-shadow:none;overflow:hidden}
-  #site-nav.open{opacity:1;pointer-events:all}
-  #nav-overlay{display:none!important}
-  #site-nav .nav-logo,#site-nav .nav-contact,#site-nav .nav-cta-wrap{display:none}
-  .nav-menu{text-align:center;padding:0;width:100%;flex:none}
-  .nav-menu>li>a,.nav-menu>li>.nav-parent,.nav-dropdown li a{-webkit-tap-highlight-color:transparent}
-  .nav-menu>li>a,.nav-menu>li>.nav-parent{font-size:19px;padding:13px 24px;justify-content:center;border-left:none!important;letter-spacing:.01em}
-  .nav-menu>li.active>a{border-left-color:transparent!important;background:rgba(255,255,255,.1)}
-  .nav-dropdown{background:rgba(0,0,0,.18)}
-  .nav-dropdown li a{text-align:center;padding-left:20px;border-left:none!important}
- .nav-portal-btn{margin:6px auto 8px!important;display:inline-flex!important;width:auto}
-  #main-content{margin-left:0;padding-top:56px}
-  #site-footer{margin-left:0;width:100%}
-  .page-hero{padding:40px 24px 32px}
   .birthday-intro{padding:32px 24px}
   .birthday-highlights{grid-template-columns:1fr}
-  .bday-fact{border-right:none;border-bottom:1px solid var(--almond-silk);padding:18px 24px}
-  .bday-fact:last-child{border-bottom:none}
+  .bday-fact{border-right:none;padding:16px 20px}
   .birthday-details{padding:36px 24px}
-  .bday-blocks{grid-template-columns:1fr}
-  .footer-inner{grid-template-columns:1fr;gap:28px}
-  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
-  .footer-bottom-links{justify-content:center;flex-wrap:wrap}
 }
-/* Back to top */
-#back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--brick-red);color:#fff;border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(0,0,0,.25);opacity:0;transform:translateY(10px);transition:opacity .25s,transform .25s,background .15s;z-index:900;pointer-events:none}
-#back-to-top.visible{opacity:1;transform:translateY(0);pointer-events:all}
-#back-to-top:hover{background:var(--oxidized-iron)}</style>
-<style id="pw-gate-style">
-#pw-gate{position:fixed;top:0;right:0;bottom:0;left:0;background:#111;z-index:99999;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
-#pw-box{background:#fff;border-radius:8px;padding:40px 32px;width:calc(100% - 48px);max-width:340px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.5)}
-#pw-logo{font-size:17px;font-weight:700;color:#581409;margin-bottom:4px;font-family:Georgia,serif;letter-spacing:.01em}
-#pw-sub{font-size:12.5px;color:#999;margin-bottom:26px}
-#pw-input{width:100%;padding:11px 14px;border:1.5px solid #ddd;border-radius:4px;font-size:16px;text-align:center;letter-spacing:.12em;outline:none;box-sizing:border-box;font-family:inherit;-webkit-appearance:none;appearance:none}
-#pw-input:focus{border-color:#581409}
-#pw-btn{width:100%;margin-top:10px;padding:13px;background:#581409;color:#fff;border:none;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;letter-spacing:.03em;-webkit-appearance:none;appearance:none;touch-action:manipulation}
-#pw-btn:hover,#pw-btn:active{background:#9B2616}
-#pw-err{color:#b00;font-size:12px;margin-top:10px;min-height:16px}
 </style>  <script src="assets/layout.js" defer></script>
 </head>
 <body>
-<div id="pw-gate">
-  <div id="pw-box">
-    <div id="pw-logo">Academy of Sport &amp; Fitness</div>
-    <div id="pw-sub">Enter the preview password to continue</div>
-    <input id="pw-input" type="password" placeholder="Password" autocomplete="off">
-    <button id="pw-btn">Enter Site</button>
-    <div id="pw-err"></div>
-  </div>
+<script>if(sessionStorage.getItem('asf_auth')!=='1'){var b=document.body.style;b.overflow='hidden';b.position='fixed';b.width='100%';}</script>
 </div>
 
 <div class="mobile-topbar"></div>
@@ -307,30 +173,5 @@ svg{display:inline-block;vertical-align:middle;flex-shrink:0}
 </div><!-- .site-wrapper -->
 
 <footer id="site-footer"></footer>
-
-
-<script>
-(function(){
-  var gate=document.getElementById('pw-gate');
-  if(sessionStorage.getItem('asf_auth')==='1'){gate.remove();return;}
-  document.body.style.overflow='hidden';
-  document.body.style.position='fixed';
-  document.body.style.width='100%';
-  function unlock(){document.body.style.overflow='';document.body.style.position='';document.body.style.width='';gate.style.display='none';gate.remove();}
-  function attempt(){
-    if(document.getElementById('pw-input').value==='asfgym'){
-      sessionStorage.setItem('asf_auth','1');
-      unlock();
-    } else {
-      document.getElementById('pw-err').textContent='Incorrect password — try again.';
-      document.getElementById('pw-input').value='';
-      document.getElementById('pw-input').focus();
-    }
-  }
-  document.getElementById('pw-btn').addEventListener('click',attempt);
-  document.getElementById('pw-input').addEventListener('keydown',function(e){if(e.key==='Enter'||e.keyCode===13)attempt();});
-  setTimeout(function(){document.getElementById('pw-input').focus();},50);
-})();
-</script>
 </body>
 </html>

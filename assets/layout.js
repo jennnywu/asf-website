@@ -121,8 +121,53 @@
     '</div>'
   ].join('\n');
 
+  var GATE_HTML = [
+    '<div id="pw-gate">',
+    '  <div id="pw-box">',
+    '    <div id="pw-logo">Academy of Sport &amp; Fitness</div>',
+    '    <div id="pw-sub">Enter the preview password to continue</div>',
+    '    <input id="pw-input" type="password" placeholder="Password" autocomplete="off">',
+    '    <button id="pw-btn">Enter Site</button>',
+    '    <div id="pw-err"></div>',
+    '  </div>',
+    '</div>'
+  ].join('\n');
+
   var ABOUT_PAGES = ['our-facility.html', 'location-contact.html', 'benefits.html', 'coaching-team.html'];
   var PROGRAMS_PAGES = ['which-program.html', 'camp.html', 'recreational-classes.html', 'xcel.html', 'competitive-team.html', 'birthday.html'];
+
+  function initGate() {
+    if (sessionStorage.getItem('asf_auth') === '1') return;
+    document.body.insertAdjacentHTML('beforeend', GATE_HTML);
+
+    function unlock() {
+      sessionStorage.setItem('asf_auth', '1');
+      var gate = document.getElementById('pw-gate');
+      if (gate) gate.remove();
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+    }
+
+    function attempt() {
+      var inp = document.getElementById('pw-input');
+      var err = document.getElementById('pw-err');
+      if (!inp) return;
+      if (inp.value.trim().toLowerCase() === 'asfgym') {
+        unlock();
+      } else {
+        inp.classList.remove('shake');
+        void inp.offsetWidth;
+        inp.classList.add('shake');
+        if (err) err.textContent = 'Incorrect password. Please try again.';
+      }
+    }
+
+    var btn = document.getElementById('pw-btn');
+    var inp = document.getElementById('pw-input');
+    if (btn) btn.addEventListener('click', attempt);
+    if (inp) inp.addEventListener('keydown', function (e) { if (e.key === 'Enter') attempt(); });
+  }
 
   function init() {
     var page = (window.location.pathname.split('/').pop() || 'index.html').split('?')[0];
@@ -227,6 +272,9 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+
+  // Gate runs immediately — layout.js is deferred so DOM is already parsed
+  initGate();
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
