@@ -1,6 +1,6 @@
 <?php
 /**
- * ASF Theme header — outputs <head>, mobile topbar, sidebar nav, opens .site-wrapper
+ * ASF Theme header — matches layout.js HTML structure exactly
  */
 ?>
 <!DOCTYPE html>
@@ -13,80 +13,87 @@
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<?php $asf_phone = asf_opt( 'asf_phone', '905-780-0913' ); ?>
+<?php
+$asf_phone = asf_opt( 'asf_phone', '905-780-0913' );
+$asf_email = asf_opt( 'asf_email', 'academysportfitness@gmail.com' );
+$asf_reg   = asf_opt( 'asf_registration_url', 'https://app.jackrabbitclass.com/regv2.asp?id=540626' );
+$asf_addr  = asf_opt( 'asf_address', "40 Vogell Road, Unit #32\nRichmond Hill, Ontario L4B 3N6" );
+?>
 
 <!-- ── MOBILE TOPBAR ── -->
-<div class="mobile-topbar" id="mobile-topbar">
-  <a class="mobile-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/web/logo.png" alt="ASF Logo">
-    <span>Academy of<br>Sport &amp; Fitness</span>
+<div class="mobile-topbar">
+  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="mobile-logo">
+    <div class="mobile-logo-icon"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/web/logo.png" alt="ASF Logo"></div>
+    <span class="mobile-logo-name">Academy of Sport and Fitness</span>
   </a>
-  <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-      <line x1="3" y1="6"  x2="21" y2="6"/>
-      <line x1="3" y1="12" x2="21" y2="12"/>
-      <line x1="3" y1="18" x2="21" y2="18"/>
-    </svg>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
   </button>
 </div>
 
-<div class="nav-overlay" id="nav-overlay"></div>
+<div id="nav-overlay" class="nav-overlay"></div>
 
 <!-- ── SIDEBAR NAV ── -->
 <nav id="site-nav" aria-label="Main navigation">
-  <div class="nav-header">
-    <a class="nav-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-      <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/web/logo.png" alt="ASF Logo">
-      <div class="nav-logo-text">
-        <span class="nav-logo-name">Academy of Sport &amp; Fitness</span>
-        <span class="nav-logo-sub">Richmond Hill Gymnastics</span>
-      </div>
-    </a>
+  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-logo">
+    <div class="nav-logo-icon"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/web/logo.png" alt="ASF Logo"></div>
+    <div class="nav-logo-text"><strong>Academy of Sport<br>and Fitness</strong></div>
+  </a>
+
+  <ul class="nav-menu">
+    <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
+
+    <li>
+      <button class="nav-parent" aria-expanded="false">
+        About
+        <span class="nav-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5H7z"/></svg></span>
+      </button>
+      <ul class="nav-dropdown">
+        <li><a href="<?php echo esc_url( home_url( '/our-facility/' ) ); ?>">Our Facility</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/location-contact/' ) ); ?>">Location &amp; Contact</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/benefits/' ) ); ?>">Benefits</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/coaching-team/' ) ); ?>">Coaching Team</a></li>
+        <li><a href="https://academysportfitness.ca/wp-content/uploads/2025/06/Academy-Policies-25-26.pdf" target="_blank" rel="noopener noreferrer">Policies (PDF)&nbsp;<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></li>
+      </ul>
+    </li>
+
+    <li>
+      <button class="nav-parent" aria-expanded="false">
+        Programs
+        <span class="nav-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5H7z"/></svg></span>
+      </button>
+      <ul class="nav-dropdown">
+        <li><a href="<?php echo esc_url( home_url( '/which-program/' ) ); ?>">Find the Right Program</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/camp/' ) ); ?>">Camps</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/recreational-classes/' ) ); ?>">Recreational Classes</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/xcel/' ) ); ?>">Xcel / Advanced</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/competitive-team/' ) ); ?>">Competitive Team</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/birthday/' ) ); ?>">Birthday Parties</a></li>
+      </ul>
+    </li>
+
+    <li><a href="<?php echo esc_url( home_url( '/gallery/' ) ); ?>">Gallery</a></li>
+
+    <li>
+      <button class="nav-parent" aria-expanded="false">
+        Family Portal
+        <span class="nav-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5H7z"/></svg></span>
+      </button>
+      <ul class="nav-dropdown">
+        <li><a href="<?php echo esc_url( $asf_reg ); ?>" target="_blank" rel="noopener noreferrer">Sign Up&nbsp;<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></li>
+        <li><a href="https://app.jackrabbitclass.com/jr3.0/ParentPortal/Login?orgID=540626" target="_blank" rel="noopener noreferrer">Log In&nbsp;<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="nav-contact">
+    <p><a href="https://maps.google.com/?q=40+Vogell+Road+Unit+32+Richmond+Hill+ON+L4B+3N6" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none"><?php echo nl2br( esc_html( $asf_addr ) ); ?></a></p>
+    <p><a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9]/', '', $asf_phone ) ); ?>"><?php echo esc_html( $asf_phone ); ?></a></p>
+    <p><a href="mailto:<?php echo esc_attr( $asf_email ); ?>"><?php echo esc_html( $asf_email ); ?></a></p>
   </div>
 
-  <div class="nav-body">
-    <ul class="nav-links">
-      <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-link">Home</a></li>
-
-      <li class="nav-parent">
-        <button class="nav-link nav-parent-btn" aria-expanded="false">
-          About
-          <svg class="nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <ul class="nav-sub">
-          <li><a href="<?php echo esc_url( home_url( '/our-facility/' ) ); ?>" class="nav-sub-link">Our Facility</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/coaching-team/' ) ); ?>" class="nav-sub-link">Coaching Team</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/benefits/' ) ); ?>" class="nav-sub-link">Benefits of Gymnastics</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/location-contact/' ) ); ?>" class="nav-sub-link">Location &amp; Contact</a></li>
-        </ul>
-      </li>
-
-      <li class="nav-parent">
-        <button class="nav-link nav-parent-btn" aria-expanded="false">
-          Programs
-          <svg class="nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <ul class="nav-sub">
-          <li><a href="<?php echo esc_url( home_url( '/recreational-classes/' ) ); ?>" class="nav-sub-link">Recreational Classes</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/xcel/' ) ); ?>" class="nav-sub-link">Xcel / Advanced</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/competitive-team/' ) ); ?>" class="nav-sub-link">Competitive Team</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/camp/' ) ); ?>" class="nav-sub-link">Camp</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/birthday/' ) ); ?>" class="nav-sub-link">Birthday Parties</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/which-program/' ) ); ?>" class="nav-sub-link">Which Program?</a></li>
-        </ul>
-      </li>
-
-      <li><a href="<?php echo esc_url( home_url( '/gallery/' ) ); ?>" class="nav-link">Gallery</a></li>
-      <li><a href="<?php echo esc_url( home_url( '/location-contact/' ) ); ?>" class="nav-link">Contact</a></li>
-    </ul>
-  </div>
-
-  <div class="nav-footer">
-    <a href="tel:<?php echo esc_attr( preg_replace('/[^0-9]/', '', $asf_phone ) ); ?>" class="nav-phone">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.59 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.87-.87a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      <?php echo esc_html( $asf_phone ); ?>
-    </a>
-    <a href="<?php echo esc_url( asf_opt( 'asf_registration_url', 'https://app.jackrabbitclass.com/regv2.asp?id=540626' ) ); ?>" class="btn-register" target="_blank" rel="noopener">Register Now</a>
+  <div class="nav-cta-wrap">
+    <a href="<?php echo esc_url( $asf_reg ); ?>" class="nav-cta" target="_blank" rel="noopener noreferrer">Register Now</a>
   </div>
 </nav>
 
