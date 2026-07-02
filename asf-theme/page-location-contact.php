@@ -1,10 +1,10 @@
+<?php /* Template Name: Location Contact */ ?>
 <?php get_header(); ?>
-
 <main id="main-content">
-
-  <div class="page-hero">
+<div class="page-hero">
     <p class="section-eyebrow">About Us</p>
     <h1>Location &amp; Contact</h1>
+    <p class="page-hero-tagline">Come visit us in Richmond Hill &mdash; we&rsquo;d love to meet you</p>
   </div>
 
   <div class="inner-page">
@@ -99,7 +99,7 @@
           <tr><td>Aug 30 – Sep 1, 2025</td><td>Labour Day Weekend</td><td>Gym Closed</td></tr>
           <tr><td>Oct 13, 2025</td><td>Thanksgiving (Monday)</td><td>Gym Closed</td></tr>
           <tr><td>Oct 31, 2025</td><td>Halloween</td><td>No Classes</td></tr>
-          <tr><td>Dec 2025 (TBC)</td><td>Holiday Recital</td><td>No regular classes - recital only for participating groups</td></tr>
+          <tr><td>December 2025</td><td>Holiday Recital</td><td>No regular classes &mdash; recital only for participating groups. Contact the gym for the confirmed date.</td></tr>
           <tr><td>Dec 19, 2025 – Jan 4, 2026</td><td>Winter Break</td><td>No Classes. Winter Camp available (dates TBC)</td></tr>
           <tr><td>Dec 25, 2025</td><td>Christmas Day</td><td>Gym Closed</td></tr>
           <tr><td>Jan 1, 2026</td><td>New Year's Day</td><td>Gym Closed</td></tr>
@@ -116,8 +116,15 @@
       <p class="closures-note">We are open on holiday weekends - classes run regularly on Saturdays and Sundays (closed Monday). Exceptions: Labour Day Weekend and summer weekends.</p>
     </div>
 
+    <hr class="section-divider">
+
+    <div class="contact-form-section">
+      <p class="section-eyebrow">Get in Touch</p>
+      <h2>Send Us a Message</h2>
+      <p class="contact-form-intro">Have a question about our programs, pricing, or anything else? We&rsquo;d love to hear from you.</p>
+      <a href="mailto:academysportfitness@gmail.com" class="btn-email">Email Us &rarr;</a>
+    </div>
   </div>
-
 </main>
-
 <?php get_footer(); ?>
+

@@ -1,8 +1,7 @@
+<?php /* Template Name: Xcel */ ?>
 <?php get_header(); ?>
-
 <main id="main-content">
-
-  <!-- Page hero -->
+<!-- Page hero -->
   <div class="page-hero">
     <div class="page-hero-inner">
       <p class="section-eyebrow">Programs</p>
@@ -34,45 +33,7 @@
   <!-- Programs -->
   <div class="programs-section">
     <h2 class="programs-heading">Xcel / Advanced Programs</h2>
-    <p class="programs-intro">The Xcel/Advanced stream has three tracks. Pre-Competitive are for our youngest talented athletes (ages 3&ndash;4); Pre-Xcel / Showcase Xcel is the entry point for athletes ages 6+; Competitive Xcel is for those ready to train and compete at a higher level. All tracks are by test or invitation only.</p>
-
-    <!-- Pre-Competitive -->
-    <div class="program-card">
-      <div class="program-card-header">
-        <h3>Pre-Competitive</h3>
-        <div class="program-tags">
-          <span class="program-tag">Ages 3&ndash;4</span>
-          <span class="program-tag">By test or invitation only</span>
-        </div>
-      </div>
-      <div class="program-card-body">
-        <p class="program-desc">Pre-Competitive are ASF&rsquo;s advanced programs for our youngest athletes. Designed for children ages 3 and 4 who show above-average athletic ability or have excelled in early recreational classes, these programs introduce structured skill development in a nurturing, age-appropriate environment.</p>
-        <div class="program-icons">
-          <div class="program-icon-row">
-            <div class="program-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <span>Trains <strong>2&ndash;4 hours per week</strong></span>
-          </div>
-          <div class="program-icon-row">
-            <div class="program-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <span>Small-group environment focused on <strong>age-appropriate skill development</strong></span>
-          </div>
-          <div class="program-icon-row">
-            <div class="program-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-            </div>
-            <span>Natural progression into <strong>Pre-Xcel / Showcase Xcel</strong></span>
-          </div>
-        </div>
-        <div class="program-goal">
-          <strong>ASF Goal</strong>
-          To identify and nurture exceptional young talent early &mdash; providing technical foundations in a fun, supportive setting that sets the stage for long-term athletic development.
-        </div>
-      </div>
-    </div>
+    <p class="programs-intro">The Xcel/Advanced stream has two tracks. Pre-Xcel / Showcase Xcel is the entry point for athletes ages 6+; Competitive Xcel is for those ready to train and compete at a higher level. All tracks are by test or invitation only.</p>
 
     <!-- Pre-Xcel / Showcase Xcel -->
     <div class="program-card">
@@ -137,6 +98,7 @@
             <span>Competes at <strong>invitational competitions</strong> across Canada and the United States</span>
           </div>
         </div>
+
         <div class="program-goal" style="margin-top:16px">
           <strong>ASF Goal</strong>
           To challenge committed athletes within a structured competitive framework that develops strength, technical mastery, mental resilience, and a strong team identity &mdash; all while building a passion for the sport that lasts a lifetime.
@@ -150,16 +112,9 @@
   <div class="pathway-section">
     <h3>Xcel Program Pathway</h3>
     <div class="pathway-flow">
-      <div class="pathway-fork">
-        <span class="pathway-fork-label">Entry Points</span>
-        <div class="pathway-step">
-          Recreational Classes
-          <em>Any age</em>
-        </div>
-        <div class="pathway-step">
-          Pre-Competitive
-          <em>Ages 3&ndash;4</em>
-        </div>
+      <div class="pathway-step">
+        Recreational Classes
+        <em>Any age</em>
       </div>
       <span class="pathway-arrow">&#8594;</span>
       <div class="pathway-step">
@@ -187,7 +142,7 @@
       <h3>Ready for the Full Competitive Stream?</h3>
       <p>Learn about the Ontario Competitive Program (OCP) and National / High Performance programs &mdash; including university scholarship pathways.</p>
     </div>
-    <a href="competitive-team" class="comp-promo-btn">View Competitive Team</a>
+    <a href="<?php echo esc_url( home_url( '/competitive-team/' ) ); ?>" class="comp-promo-btn">View Competitive Team</a>
   </div>
 
   <!-- How to Join -->
@@ -213,7 +168,6 @@
       </a>
     </div>
   </div>
-
 </main>
-
 <?php get_footer(); ?>
+

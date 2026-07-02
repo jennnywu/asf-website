@@ -1,10 +1,10 @@
+<?php /* Template Name: Coaching Team */ ?>
 <?php get_header(); ?>
-
 <main id="main-content">
-
-  <div class="page-hero">
+<div class="page-hero">
     <p class="section-eyebrow">About Us</p>
     <h1>Coaching Team</h1>
+    <p class="page-hero-tagline">Certified coaches who are passionate about every child&rsquo;s development</p>
   </div>
 
   <div class="team-intro">
@@ -37,7 +37,7 @@
         <h2 class="coach-name">Yasmin Salem</h2>
         <p class="coach-title">Coaching Development &amp; Assistant Head Coach</p>
         <div class="coach-bio">
-          <p>Yasmin has been coaching at the Academy for 7 years. She did rhythmic and artistic gymnastics growing up which sparked her passion for the sport. She is a full time coach and currently studying at Ryerson University. Yasmin brings her knowledge and passion to each child and all our up and coming young coaches.</p>
+          <p>Yasmin has been coaching at the Academy for 7 years. She did rhythmic and artistic gymnastics growing up which sparked her passion for the sport. She is a full time coach currently studying at Ryerson University. Yasmin brings her knowledge and passion to each child and all our up and coming young coaches.</p>
         </div>
       </div>
     </div>
@@ -73,7 +73,6 @@
   <div class="cert-note">
     <p>All of our recreational and competitive coaches are certified under the N.C.C.P. (National Coaching Certification Program) for artistic gymnastics and trampoline. They are then required to apprentice with a Senior Staff member prior to receiving their own group. All of our coaches are qualified to teach and spot all gymnastics skills. We select people who have a passion for our sport and train them to use safe and progressive techniques.</p>
   </div>
-
 </main>
-
 <?php get_footer(); ?>
+

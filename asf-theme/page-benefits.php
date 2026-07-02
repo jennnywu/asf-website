@@ -1,10 +1,10 @@
+<?php /* Template Name: Benefits */ ?>
 <?php get_header(); ?>
-
 <main id="main-content">
-
-  <div class="page-hero">
+<div class="page-hero">
     <p class="section-eyebrow">About Us</p>
     <h1>Benefits of Gymnastics</h1>
+    <p class="page-hero-tagline">Why gymnastics is one of the best activities for growing children</p>
   </div>
 
   <div class="intro-band">
@@ -167,7 +167,6 @@
       <li>Mathieson, K. (2005). Grown-ups make a difference! In <em>Social Skills in the Early Years: Supporting Social and Behavioural Learning.</em> London: Sage Publications.</li>
     </ol>
   </div>
-
 </main>
-
 <?php get_footer(); ?>
+

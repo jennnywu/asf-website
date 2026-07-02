@@ -1,10 +1,10 @@
+<?php /* Template Name: Our Facility */ ?>
 <?php get_header(); ?>
-
 <main id="main-content">
-
-  <div class="page-hero">
+<div class="page-hero">
     <p class="section-eyebrow">About Us</p>
     <h1>Our Facility</h1>
+    <p class="page-hero-tagline">FIG-regulated equipment and a world-class space for every level of gymnast</p>
   </div>
 
   <div class="inner-page">
@@ -56,23 +56,22 @@
       <div class="gallery-placeholder"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/1-facility.jpg" alt="ASF Facility"></div>
     </div>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-      <button class="lb-close" id="lb-close">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <button class="lb-prev" id="lb-prev">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <div class="lb-img-wrap"><img id="lb-img" src="" alt=""></div>
-      <button class="lb-next" id="lb-next">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
-      <div class="lb-counter" id="lb-counter">1 / 8</div>
-    </div>
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lb-close">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <button class="lb-prev" id="lb-prev">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <div class="lb-img-wrap"><img id="lb-img" src="" alt=""></div>
+  <button class="lb-next" id="lb-next">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+  <div class="lb-counter" id="lb-counter">1 / 8</div>
+</div>
 
   </div>
-
 </main>
-
 <?php get_footer(); ?>
+

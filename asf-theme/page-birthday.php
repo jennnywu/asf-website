@@ -1,8 +1,7 @@
+<?php /* Template Name: Birthday */ ?>
 <?php get_header(); ?>
-
 <main id="main-content">
-
-  <div class="page-hero">
+<div class="page-hero">
     <p class="section-eyebrow">Programs</p>
     <h1>Birthday Parties</h1>
     <p class="page-hero-tagline">Celebrate your child's big day with an action-packed gymnastics party</p>
@@ -100,7 +99,6 @@
       </a>
     </div>
   </div>
-
 </main>
-
 <?php get_footer(); ?>
+

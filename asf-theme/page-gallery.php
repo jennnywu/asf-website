@@ -1,10 +1,10 @@
+<?php /* Template Name: Gallery */ ?>
 <?php get_header(); ?>
-
 <main id="main-content">
-
-  <div class="page-hero">
+<div class="page-hero">
     <p class="section-eyebrow">ASF in Action</p>
     <h1>Gallery</h1>
+    <p class="page-hero-tagline">A look inside the gym and our programs</p>
   </div>
 
   <div class="gallery-section">
@@ -23,28 +23,28 @@
 
       <!-- FACILITY (real photos) -->
       <div class="gallery-item" data-category="facility" data-src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/2-facility.jpg" data-label="Facility">
-        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/2-facility.jpg" alt="ASF Facility">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/2-facility.jpg" alt="ASF gymnasium overview showing floor and equipment">
       </div>
       <div class="gallery-item" data-category="facility" data-src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/3-facility.jpg" data-label="Facility">
-        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/3-facility.jpg" alt="ASF Facility">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/3-facility.jpg" alt="Gymnastics bars and beam apparatus at ASF">
       </div>
       <div class="gallery-item" data-category="facility" data-src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/4-facility.jpg" data-label="Facility">
-        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/4-facility.jpg" alt="ASF Facility">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/4-facility.jpg" alt="ASF gym floor and spring floor area">
       </div>
       <div class="gallery-item" data-category="facility" data-src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/5-facility.jpg" data-label="Facility">
-        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/5-facility.jpg" alt="ASF Facility">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/5-facility.jpg" alt="Foam pit and high bar at Academy of Sport and Fitness">
       </div>
       <div class="gallery-item" data-category="facility" data-src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/6-facility.jpg" data-label="Facility">
-        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/6-facility.jpg" alt="ASF Facility">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/6-facility.jpg" alt="Balance beams and training area at ASF">
       </div>
       <div class="gallery-item" data-category="facility" data-src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/7-facility.jpg" data-label="Facility">
-        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/7-facility.jpg" alt="ASF Facility">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/7-facility.jpg" alt="Vault and runway at Academy of Sport and Fitness">
       </div>
       <div class="gallery-item" data-category="facility" data-src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/8-facility.jpg" data-label="Facility">
-        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/8-facility.jpg" alt="ASF Facility">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/8-facility.jpg" alt="ASF gymnasium — full view of training facility">
       </div>
       <div class="gallery-item" data-category="facility" data-src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/1-facility.jpg" data-label="Facility">
-        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/1-facility.jpg" alt="ASF Facility">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/facility/1-facility.jpg" alt="Entrance and lobby of Academy of Sport and Fitness">
       </div>
 
       <!-- CAMPS (placeholders) -->
@@ -112,23 +112,6 @@
 
     </div>
   </div>
-
 </main>
-
-<!-- Lightbox (outside main, required for gallery functionality) -->
-<div class="lightbox" id="lightbox">
-  <button class="lb-close" id="lb-close">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-  </button>
-  <button class="lb-prev" id="lb-prev">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-  </button>
-  <div class="lb-img-wrap" id="lb-content"></div>
-  <button class="lb-next" id="lb-next">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-  </button>
-  <div class="lb-label" id="lb-label"></div>
-  <div class="lb-counter" id="lb-counter"></div>
-</div>
-
 <?php get_footer(); ?>
+

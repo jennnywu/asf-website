@@ -1,8 +1,7 @@
+<?php /* Template Name: Recreational Classes */ ?>
 <?php get_header(); ?>
-
 <main id="main-content">
-
-  <!-- Page hero -->
+<!-- Page hero -->
   <div class="page-hero">
     <p class="section-eyebrow">Programs</p>
     <h1>Recreational Classes</h1>
@@ -37,24 +36,26 @@
   </div>
 
 
-  <!-- PANEL 1: 2026–2027 CLASSES -->
+  <!-- ══════════════════════════════════
+       PANEL 1: 2026–2027 CLASSES
+  ══════════════════════════════════ -->
   <div class="tab-panel active" id="panel-regular">
     <div class="content-section">
 
       <h2 class="section-h2">2026&ndash;2027 Classes</h2>
-      <p class="section-intro-text">Registration opens each year for Session 1 (September&ndash;January) and Session 2 (February&ndash;June). An Annual Recreational Registration Fee of $64 + HST per student is required &mdash; valid July 1, 2025 to June 30, 2026.</p>
+      <p class="section-intro-text">Registration opens each year for Session 1 (September&ndash;January) and Session 2 (February&ndash;June). An Annual Recreational Registration Fee of $64 + HST per student is required &mdash; valid July 1, 2026 to June 30, 2027.</p>
 
       <!-- Age guide -->
       <div class="age-guide-box">
         <h3>Which class is right for my child?</h3>
         <table>
-          <tr><td>18 months &ndash; 2.5 years</td><td>Tot &amp; Adult <em style="font-size:12px;color:var(--text-mid)">(parent or caregiver joins)</em></td></tr>
-          <tr><td>Age 3</td><td>KinderFun</td></tr>
-          <tr><td>Age 4</td><td>KinderFun or Beginner GymFun</td></tr>
-          <tr><td>Ages 5&ndash;6.5</td><td>Junior GymFun</td></tr>
-          <tr><td>Ages 7&ndash;11</td><td>GymFun 7+</td></tr>
+          <tr><td>18 months - 2.5 years</td><td>Tot &amp; Adult <em style="font-size:12px;color:var(--text-mid)">(parent or caregiver joins)</em></td></tr>
+          <tr><td>Age 3</td><td>Kinder GymFun</td></tr>
+          <tr><td>Age 4</td><td>Kinder GymFun or Beginner GymFun</td></tr>
+          <tr><td>Ages 5-6.5</td><td>Junior GymFun</td></tr>
+          <tr><td>Ages 7-11</td><td>GymFun 7+</td></tr>
           <tr><td>Ages 12+</td><td>Teen GymFun 12+</td></tr>
-          <tr><td>Ages 5+ (co-ed, any level)</td><td>Ninja Gymnastics</td></tr>
+          <tr><td>Ages 4.5-8 (any level)</td><td>Ninja Gymnastics</td></tr>
         </table>
       </div>
 
@@ -84,14 +85,21 @@
                 <span style="font-size:12px;color:var(--text-mid)">4 mini-sessions offered per year</span>
               </div>
             </div>
-            <a href="https://app.jackrabbitclass.com/regv2.asp?id=540626" class="class-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
+            <details class="card-schedule">
+              <summary>View Schedule</summary>
+              <table class="card-schedule-table"><thead><tr><th>Day</th><th>Time</th></tr></thead><tbody>
+                  <tr><td>Saturday</td><td>9:30am–10:15am<br>10:30am–11:15am</td></tr>
+                  <tr><td>Sunday</td><td>10:00am–10:45am</td></tr>
+              </tbody></table>
+            </details>
+            <a href="<?php echo esc_url( asf_opt( 'asf_registration_url', 'https://app.jackrabbitclass.com/regv2.asp?id=540626' ) ); ?>" class="class-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
           </div>
         </div>
 
-        <!-- KinderFun -->
+        <!-- Kinder GymFun -->
         <div class="class-card">
           <div class="class-card-header">
-            <h3>KinderFun</h3>
+            <h3>Kinder GymFun</h3>
             <div class="class-tags">
               <span class="class-tag">Ages 3&ndash;4</span>
               <span class="class-tag">55 min</span>
@@ -109,7 +117,18 @@
                 <strong>$612 <small>+ HST</small></strong>
               </div>
             </div>
-            <a href="https://app.jackrabbitclass.com/regv2.asp?id=540626" class="class-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
+            <details class="card-schedule">
+              <summary>View Schedule</summary>
+              <table class="card-schedule-table"><thead><tr><th>Day</th><th>Time</th></tr></thead><tbody>
+                <tr><td>Monday</td><td>4:00pm–4:55pm</td></tr>
+                <tr><td>Tuesday</td><td>5:00pm–5:55pm</td></tr>
+                <tr><td>Wednesday</td><td>6:00pm–6:55pm</td></tr>
+                <tr><td>Thursday</td><td>4:00pm–4:55pm<br>5:00pm–5:55pm<br>6:00pm–6:55pm</td></tr>
+                <tr><td>Saturday</td><td>9:30am–10:25am<br>10:30am–11:25am</td></tr>
+                <tr><td>Sunday</td><td>10:00am–10:55am<br>11:00am–11:55am</td></tr>
+              </tbody></table>
+            </details>
+            <a href="<?php echo esc_url( asf_opt( 'asf_registration_url', 'https://app.jackrabbitclass.com/regv2.asp?id=540626' ) ); ?>" class="class-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
           </div>
         </div>
 
@@ -123,7 +142,7 @@
             </div>
           </div>
           <div class="class-card-body">
-            <p class="class-desc">Structured skill development on all four gymnastics apparatus. Builds on KinderFun foundations with greater technical focus and repetition.</p>
+            <p class="class-desc">Structured skill development on all four gymnastics apparatus. Builds on Kinder GymFun foundations with greater technical focus and repetition.</p>
             <div class="class-sessions">
               <div class="session-row">
                 <span>Session 1 &mdash; 17 classes</span>
@@ -134,7 +153,18 @@
                 <strong>$612 <small>+ HST</small></strong>
               </div>
             </div>
-            <a href="https://app.jackrabbitclass.com/regv2.asp?id=540626" class="class-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
+            <details class="card-schedule">
+              <summary>View Schedule</summary>
+              <table class="card-schedule-table"><thead><tr><th>Day</th><th>Time</th></tr></thead><tbody>
+                <tr><td>Monday</td><td>5:00pm–5:55pm</td></tr>
+                <tr><td>Tuesday</td><td>6:00pm–6:55pm</td></tr>
+                <tr><td>Wednesday</td><td>5:00pm–5:55pm</td></tr>
+                <tr><td>Thursday</td><td>5:00pm–5:55pm</td></tr>
+                <tr><td>Saturday</td><td>10:00am–10:55am<br>11:00am–11:55am<br>1:00pm–1:55pm</td></tr>
+                <tr><td>Sunday</td><td>11:00am–11:55am</td></tr>
+              </tbody></table>
+            </details>
+            <a href="<?php echo esc_url( asf_opt( 'asf_registration_url', 'https://app.jackrabbitclass.com/regv2.asp?id=540626' ) ); ?>" class="class-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
           </div>
         </div>
 
@@ -159,7 +189,18 @@
                 <strong>$882 <small>+ HST</small></strong>
               </div>
             </div>
-            <a href="https://app.jackrabbitclass.com/regv2.asp?id=540626" class="class-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
+            <details class="card-schedule">
+              <summary>View Schedule</summary>
+              <table class="card-schedule-table"><thead><tr><th>Day</th><th>Time</th></tr></thead><tbody>
+                <tr><td>Monday</td><td>6:15pm–7:40pm</td></tr>
+                <tr><td>Tuesday</td><td>4:45pm–6:10pm</td></tr>
+                <tr><td>Wednesday</td><td>4:45pm–6:10pm</td></tr>
+                <tr><td>Thursday</td><td>4:45pm–6:10pm</td></tr>
+                <tr><td>Saturday</td><td>9:30am–10:55am<br>11:15am–12:40pm</td></tr>
+                <tr><td>Sunday</td><td>9:30am–10:55am<br>11:15am–12:40pm</td></tr>
+              </tbody></table>
+            </details>
+            <a href="<?php echo esc_url( asf_opt( 'asf_registration_url', 'https://app.jackrabbitclass.com/regv2.asp?id=540626' ) ); ?>" class="class-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
           </div>
         </div>
 
@@ -184,7 +225,17 @@
                 <strong>$1,116 <small>+ HST</small></strong>
               </div>
             </div>
-            <a href="https://app.jackrabbitclass.com/regv2.asp?id=540626" class="class-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
+            <details class="card-schedule">
+              <summary>View Schedule</summary>
+              <table class="card-schedule-table"><thead><tr><th>Day</th><th>Time</th></tr></thead><tbody>
+                <tr><td>Monday</td><td>6:00pm–7:55pm</td></tr>
+                <tr><td>Tuesday</td><td>6:15pm–8:10pm</td></tr>
+                <tr><td>Thursday</td><td>6:15pm–8:10pm</td></tr>
+                <tr><td>Saturday</td><td>11:00am–12:55am<br>1:00pm–2:55pm</td></tr>
+                <tr><td>Sunday</td><td>9:30am–11:25am<br>11:30am–1:25pm</td></tr>
+              </tbody></table>
+            </details>
+            <a href="<?php echo esc_url( asf_opt( 'asf_registration_url', 'https://app.jackrabbitclass.com/regv2.asp?id=540626' ) ); ?>" class="class-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
           </div>
         </div>
 
@@ -209,7 +260,15 @@
                 <strong>$1,116 <small>+ HST</small></strong>
               </div>
             </div>
-            <a href="https://app.jackrabbitclass.com/regv2.asp?id=540626" class="class-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
+            <details class="card-schedule">
+              <summary>View Schedule</summary>
+              <table class="card-schedule-table"><thead><tr><th>Day</th><th>Time</th></tr></thead><tbody>
+                <tr><td>Thursday</td><td>6:15pm–8:10pm</td></tr>
+                <tr><td>Saturday</td><td>1:00pm–2:55pm<br>3:00pm–4:55pm</td></tr>
+                <tr><td>Sunday</td><td>12:00pm–1:55pm</td></tr>
+              </tbody></table>
+            </details>
+            <a href="<?php echo esc_url( asf_opt( 'asf_registration_url', 'https://app.jackrabbitclass.com/regv2.asp?id=540626' ) ); ?>" class="class-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
           </div>
         </div>
 
@@ -218,8 +277,8 @@
           <div class="class-card-header">
             <h3>Ninja Gymnastics</h3>
             <div class="class-tags">
-              <span class="class-tag">Ages 5+</span>
-              <span class="class-tag">Co-ed</span>
+              <span class="class-tag">Ages 4.5-8</span>
+              <span class="class-tag">55 min</span>
             </div>
           </div>
           <div class="class-card-body">
@@ -234,11 +293,78 @@
                 <strong>$648 <small>+ HST</small></strong>
               </div>
             </div>
-            <a href="https://app.jackrabbitclass.com/regv2.asp?id=540626" class="class-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
+            <details class="card-schedule">
+              <summary>View Schedule</summary>
+              <table class="card-schedule-table"><thead><tr><th>Day</th><th>Time</th></tr></thead><tbody>
+                <tr><td>Saturday</td><td>10:00am–10:55am (Ages 4.5–7)<br>11:00am–11:55am (Ages 6.5–8)</td></tr>
+              </tbody></table>
+            </details>
+            <a href="<?php echo esc_url( asf_opt( 'asf_registration_url', 'https://app.jackrabbitclass.com/regv2.asp?id=540626' ) ); ?>" class="class-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
           </div>
         </div>
 
       </div><!-- /.class-grid -->
+
+      <div class="full-schedule">
+        <h3 class="full-schedule-title">Class Schedule &mdash; Quick Reference</h3>
+        <div class="full-schedule-scroll">
+          <table class="full-schedule-table">
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Ages</th>
+                <th>Length</th>
+                <th>Available Times</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tot &amp; Adult</td>
+                <td>18mo&ndash;2.5yr</td>
+                <td>45 min</td>
+                <td>Sat 9:30am–10:15am &middot; 10:30am–11:15am<br>Sun 10:00am–10:45am</td>
+              </tr>
+              <tr>
+                <td>Kinder GymFun</td>
+                <td>Ages 3&ndash;4</td>
+                <td>55 min</td>
+                <td>Mon 4:00pm–4:55pm<br>Tue 5:00pm–5:55pm<br>Wed 6:00pm–6:55pm<br>Thu 4:00pm–4:55pm &middot; 5:00pm–5:55pm &middot; 6:00pm–6:55pm<br>Sat 9:30am–10:25am &middot; 10:30am–11:25am<br>Sun 10:00am–10:55am &middot; 11:00am–11:55am</td>
+              </tr>
+              <tr>
+                <td>Beginner GymFun</td>
+                <td>Ages 4&ndash;5</td>
+                <td>55 min</td>
+                <td>Mon 5:00pm–5:55pm<br>Tue 6:00pm–6:55pm<br>Wed 5:00pm–5:55pm<br>Thu 5:00pm–5:55pm<br>Sat 10:00am–10:55am &middot; 11:00am–11:55am &middot; 1:00pm–1:55pm<br>Sun 11:00am–11:55am</td>
+              </tr>
+              <tr>
+                <td>Junior GymFun</td>
+                <td>Ages 5&ndash;6.5</td>
+                <td>85 min</td>
+                <td>Mon 6:15pm–7:40pm<br>Tue 4:45pm–6:10pm<br>Wed 4:45pm–6:10pm<br>Thu 4:45pm–6:10pm<br>Sat 9:30am–10:55am &middot; 11:15am–12:40am<br>Sun 9:30am–10:55am &middot; 11:15am–12:40am</td>
+              </tr>
+              <tr>
+                <td>GymFun 7+</td>
+                <td>Ages 7+</td>
+                <td>115 min</td>
+                <td>Mon 6:00pm–7:55pm<br>Tue 6:15pm–8:10pm<br>Thu 6:15pm–8:10pm<br>Sat 11:00am–12:55pm &middot; 1:00pm–2:55pm<br>Sun 9:30am–11:25am &middot; 11:30am–1:25pm</td>
+              </tr>
+              <tr>
+                <td>Teen GymFun 12+</td>
+                <td>Ages 12+</td>
+                <td>115 min</td>
+                <td>Thu 6:15pm–8:10pm<br>Sat 1:00pm–2:55pm &middot; 3:00pm–4:55pm<br>Sun 12:00pm–1:55pm</td>
+              </tr>
+              <tr>
+                <td>Ninja Gymnastics</td>
+                <td>Ages 4.5&ndash;8</td>
+                <td>55 min</td>
+                <td>Sat 10:00am–10:55am (Ages 4.5–7) &middot; 11:00am–11:55am (Ages 6.5–8)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
 
       <hr class="section-divider">
 
@@ -267,7 +393,7 @@
           </button>
           <div class="accordion-body">
             <ul>
-              <li>The <strong>Annual Recreational Registration Fee</strong> of $64 + HST per student is required before enrolment and is valid July 1, 2025 &ndash; June 30, 2026.</li>
+              <li>The <strong>Annual Recreational Registration Fee</strong> of $64 + HST per student is required before enrolment and is valid July 1, 2026 &ndash; June 30, 2027.</li>
               <li>Fees are <strong>pro-rated</strong> if you join mid-session &mdash; you pay only for the remaining classes.</li>
               <li><strong>5% sibling discount</strong> for a 2nd or 3rd child enrolled from the same family.</li>
               <li><strong>25% discount</strong> on a second class for the same child within the same session.</li>
@@ -323,7 +449,9 @@
   </div><!-- /#panel-regular -->
 
 
-  <!-- PANEL 2: SUMMER CLASSES -->
+  <!-- ══════════════════════════════════
+       PANEL 2: SUMMER CLASSES
+  ══════════════════════════════════ -->
   <div class="tab-panel" id="panel-summer">
     <div class="content-section">
 
@@ -341,10 +469,10 @@
 
       <div class="class-grid">
 
-        <!-- KinderFun / Beginner Summer -->
+        <!-- Kinder GymFun / Beginner -->
         <div class="class-card">
           <div class="class-card-header">
-            <h3>KinderFun / Beginner</h3>
+            <h3>Kinder GymFun / Beginner</h3>
             <div class="class-tags">
               <span class="class-tag">Ages 3&ndash;5</span>
               <span class="class-tag">55 min</span>
@@ -353,15 +481,17 @@
           <div class="class-card-body">
             <div class="class-price-feature">$306 <span>+ HST</span></div>
             <div class="class-price-sub">9 classes &middot; July 6 &ndash; September 3</div>
-            <div class="schedule-heading">Available times</div>
-            <ul class="schedule-list">
-              <li>Tuesday 5:00&ndash;5:55 pm</li>
-              <li>Tuesday 6:00&ndash;6:55 pm</li>
-              <li>Wednesday 4:30&ndash;5:25 pm</li>
-              <li>Wednesday 5:00&ndash;5:55 pm</li>
-              <li>Wednesday 5:30&ndash;6:25 pm</li>
-            </ul>
-            <a href="https://app.jackrabbitclass.com/regv2.asp?id=540626" class="class-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
+            <details class="card-schedule">
+              <summary>View Schedule</summary>
+              <table class="card-schedule-table"><thead><tr><th>Day</th><th>Time</th></tr></thead><tbody>
+                <tr><td>Tuesday</td><td>5:00&ndash;5:55 pm</td></tr>
+                <tr><td>Tuesday</td><td>6:00&ndash;6:55 pm</td></tr>
+                <tr><td>Wednesday</td><td>4:30&ndash;5:25 pm</td></tr>
+                <tr><td>Wednesday</td><td>5:00&ndash;5:55 pm</td></tr>
+                <tr><td>Wednesday</td><td>5:30&ndash;6:25 pm</td></tr>
+              </tbody></table>
+            </details>
+            <a href="<?php echo esc_url( asf_opt( 'asf_registration_url', 'https://app.jackrabbitclass.com/regv2.asp?id=540626' ) ); ?>" class="class-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
           </div>
         </div>
 
@@ -377,12 +507,14 @@
           <div class="class-card-body">
             <div class="class-price-feature">$441 <span>+ HST</span></div>
             <div class="class-price-sub">9 classes &middot; July 6 &ndash; September 3</div>
-            <div class="schedule-heading">Available times</div>
-            <ul class="schedule-list">
-              <li>Tuesday 5:00&ndash;6:25 pm</li>
-              <li>Wednesday 6:00&ndash;7:25 pm</li>
-            </ul>
-            <a href="https://app.jackrabbitclass.com/regv2.asp?id=540626" class="class-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
+            <details class="card-schedule">
+              <summary>View Schedule</summary>
+              <table class="card-schedule-table"><thead><tr><th>Day</th><th>Time</th></tr></thead><tbody>
+                <tr><td>Tuesday</td><td>5:00&ndash;6:25 pm</td></tr>
+                <tr><td>Wednesday</td><td>6:00&ndash;7:25 pm</td></tr>
+              </tbody></table>
+            </details>
+            <a href="<?php echo esc_url( asf_opt( 'asf_registration_url', 'https://app.jackrabbitclass.com/regv2.asp?id=540626' ) ); ?>" class="class-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
           </div>
         </div>
 
@@ -398,12 +530,14 @@
           <div class="class-card-body">
             <div class="class-price-feature">$558 <span>+ HST</span></div>
             <div class="class-price-sub">9 classes &middot; July 6 &ndash; September 3</div>
-            <div class="schedule-heading">Available times</div>
-            <ul class="schedule-list">
-              <li>Tuesday 6:00&ndash;7:55 pm</li>
-              <li>Thursday 6:00&ndash;7:55 pm</li>
-            </ul>
-            <a href="https://app.jackrabbitclass.com/regv2.asp?id=540626" class="class-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
+            <details class="card-schedule">
+              <summary>View Schedule</summary>
+              <table class="card-schedule-table"><thead><tr><th>Day</th><th>Time</th></tr></thead><tbody>
+                <tr><td>Tuesday</td><td>6:00&ndash;7:55 pm</td></tr>
+                <tr><td>Thursday</td><td>6:00&ndash;7:55 pm</td></tr>
+              </tbody></table>
+            </details>
+            <a href="<?php echo esc_url( asf_opt( 'asf_registration_url', 'https://app.jackrabbitclass.com/regv2.asp?id=540626' ) ); ?>" class="class-register-btn" target="_blank" rel="noopener noreferrer">Register Now</a>
           </div>
         </div>
 
@@ -447,7 +581,9 @@
   </div><!-- /#panel-summer -->
 
 
-  <!-- PANEL 3: PREPARING FOR CLASS -->
+  <!-- ══════════════════════════════════
+       PANEL 3: PREPARING FOR CLASS
+  ══════════════════════════════════ -->
   <div class="tab-panel" id="panel-preparing">
     <div class="content-section">
 
@@ -568,7 +704,9 @@
   </div><!-- /#panel-preparing -->
 
 
-  <!-- PANEL 4: CANCELLATION POLICY -->
+  <!-- ══════════════════════════════════
+       PANEL 4: CANCELLATION POLICY
+  ══════════════════════════════════ -->
   <div class="tab-panel" id="panel-cancellation">
     <div class="policy-section">
 
@@ -610,6 +748,12 @@
     </div>
   </div><!-- /#panel-cancellation -->
 
-</main>
 
+<!-- Not sure which class? -->
+<div class="finder-stuck">
+  <p>Not sure which class is right for your child? <strong>Contact us</strong> – we're happy to help you find the best fit.</p>
+  <a href="mailto:academysportfitness@gmail.com" class="btn-red">Email Us</a>
+</div>
+</main>
 <?php get_footer(); ?>
+

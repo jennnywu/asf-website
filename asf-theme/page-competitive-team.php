@@ -1,8 +1,7 @@
+<?php /* Template Name: Competitive Team */ ?>
 <?php get_header(); ?>
-
 <main id="main-content">
-
-  <!-- Page hero -->
+<!-- Page hero -->
   <div class="page-hero">
     <div class="page-hero-inner">
       <p class="section-eyebrow">Programs</p>
@@ -24,16 +23,13 @@
 
   <!-- About -->
   <div class="about-section">
-    <h2 class="section-h2">About Our Competitive Team</h2>
-    <p class="about-text">Through our dynamic gymnastics program and the individualization of each athlete, our gymnasts develop life skills such as self-discipline, independence, self-esteem, and the ability to cope with both success and challenge &mdash; all in a positive and constructive environment.</p>
-    <p class="about-text">A team atmosphere is highly encouraged at ASF. Our coaching staff monitors all programs from Pre-Competitive through High Performance, ensuring every athlete receives the same technical foundation throughout the levels. Proper gymnastics development from beginner to elite is at the core of everything we do.</p>
-    <p class="about-text">All competitive programs are <strong>by test or invitation only</strong>. Prospective athletes are invited to a free assessment to evaluate readiness for the program.</p>
-  </div>
-
-  <!-- Team photos -->
-  <div class="team-photos">
-    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/competitive-team/3-competitive-team.jpg" alt="ASF Competitive Team">
-    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/photos/competitive-team/4-competitive-team.jpg" alt="ASF Competitive Team">
+    <div class="about-section-text">
+      <h2 class="section-h2">About Our Competitive Team</h2>
+      <p class="about-text">Through our dynamic gymnastics program and the individualization of each athlete, our gymnasts develop life skills such as self-discipline, independence, self-esteem, and the ability to cope with both success and challenge &mdash; all in a positive and constructive environment.</p>
+      <p class="about-text">A team atmosphere is highly encouraged at ASF. Our coaching staff monitors all programs from Pre-Competitive through High Performance, ensuring every athlete receives the same technical foundation throughout the levels. Proper gymnastics development from beginner to elite is at the core of everything we do.</p>
+      <p class="about-text">All competitive programs are <strong>by test or invitation only</strong>. Prospective athletes are invited to a free assessment to evaluate readiness for the program.</p>
+    </div>
+    <img src="images/Photos/4 Competitive Team/IMG_2468.JPG" alt="ASF Competitive Team" class="about-photo">
   </div>
 
   <!-- Programs -->
@@ -76,10 +72,9 @@
     <!-- Ontario Competitive Program -->
     <div class="program-card">
       <div class="program-card-header">
-        <h3>Ontario Competitive Program</h3>
+        <h3>Ontario Competitive Program (Levels 1&ndash;9)</h3>
         <div class="program-tags">
           <span class="program-tag">Girls Ages 7+</span>
-          <span class="program-tag">Levels 1&ndash;9</span>
           <span class="program-tag">By test or invitation only</span>
         </div>
       </div>
@@ -113,10 +108,10 @@
     <!-- National / High Performance -->
     <div class="program-card">
       <div class="program-card-header">
-        <h3>National (Level 10) / High Performance</h3>
+        <h3>National (Level 10+) / High Performance</h3>
         <div class="program-tags">
-          <span class="program-tag">Ages 11&ndash;12+ (Level 10 / Novice)</span>
-          <span class="program-tag">By invitation only</span>
+          <span class="program-tag">Girls Ages 11+</span>
+          <span class="program-tag">By test or invitation only</span>
         </div>
       </div>
       <div class="program-card-body">
@@ -171,7 +166,7 @@
       <h3>Looking for Xcel or Advanced?</h3>
       <p>The Xcel program is a flexible competitive and advanced recreational stream for athletes ages 6+. See Pre-Xcel, Showcase Xcel, and Competitive Xcel details.</p>
     </div>
-    <a href="xcel" class="xcel-promo-btn">View Xcel Programs</a>
+    <a href="<?php echo esc_url( home_url( '/xcel/' ) ); ?>" class="xcel-promo-btn">View Xcel Programs</a>
   </div>
 
   <!-- How to Join -->
@@ -197,7 +192,6 @@
       </a>
     </div>
   </div>
-
 </main>
-
 <?php get_footer(); ?>
+
