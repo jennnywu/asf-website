@@ -3,6 +3,11 @@
    Page-specific CSS stays in each page's <style> block
    ================================================================ */
 
+/* ── PAGE TRANSITIONS (Chrome/Edge 126+, degrades gracefully) ── */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation-duration: .18s; }
+::view-transition-new(root) { animation-duration: .18s; }
+
 /* ── VARIABLES ── */
 :root {
   --seashell:      #FCF0EE;
