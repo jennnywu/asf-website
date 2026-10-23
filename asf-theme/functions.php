@@ -142,9 +142,9 @@ function asf_admin_bar_css() {
     if ( is_admin_bar_showing() ) {
         echo '<style>
         #wpadminbar { position: fixed; }
-        body.admin-bar #site-nav { top: 32px; }
+        body.admin-bar #site-nav { top: 32px; height: calc(100vh - 32px); }
         @media screen and (max-width:782px) {
-            body.admin-bar #site-nav { top: 46px; }
+            body.admin-bar #site-nav { top: 46px; height: calc(100vh - 46px); }
             body.admin-bar .mobile-topbar { top: 46px; }
         }
         </style>';
