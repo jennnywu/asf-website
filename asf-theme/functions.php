@@ -10,46 +10,42 @@ function asf_opt( $key, $fallback = null ) {
 }
 
 /* ── ENQUEUE SCRIPTS & STYLES ── */
+// Version = the file's last-modified time, so browsers fetch a fresh copy whenever a file changes
+function asf_asset( $path ) {
+    return [ get_template_directory_uri() . "/$path", (string) filemtime( get_template_directory() . "/$path" ) ];
+}
+
 function asf_scripts() {
-    $v = wp_get_theme()->get( 'Version' );
     wp_enqueue_style(
         'asf-fonts',
         'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap',
         [],
         null
     );
-    wp_enqueue_style(
-        'asf-main',
-        get_template_directory_uri() . '/assets/css/main.css',
-        [ 'asf-fonts' ],
-        $v
-    );
-    wp_enqueue_script(
-        'asf-nav',
-        get_template_directory_uri() . '/assets/js/nav.js',
-        [],
-        $v,
-        true
-    );
+    [ $url, $ver ] = asf_asset( 'assets/css/main.css' );
+    wp_enqueue_style( 'asf-main', $url, [ 'asf-fonts' ], $ver );
+    [ $url, $ver ] = asf_asset( 'assets/js/nav.js' );
+    wp_enqueue_script( 'asf-nav', $url, [], $ver, true );
 
     // Page-specific script: assets/js/pages/{slug}.js
     $slug = asf_current_page_slug();
     if ( $slug && file_exists( get_template_directory() . "/assets/js/pages/$slug.js" ) ) {
-        wp_enqueue_script( "asf-page-$slug", get_template_directory_uri() . "/assets/js/pages/$slug.js", [], $v, true );
+        [ $url, $ver ] = asf_asset( "assets/js/pages/$slug.js" );
+        wp_enqueue_script( "asf-page-$slug", $url, [], $ver, true );
     }
 }
 add_action( 'wp_enqueue_scripts', 'asf_scripts' );
 
 // Block styles and page-specific CSS (assets/css/pages/{slug}.css), on the site and in the page editor
 function asf_block_assets() {
-    $v   = wp_get_theme()->get( 'Version' );
-    $uri = get_template_directory_uri();
     // On the site these load after main.css so page rules win, as in the original HTML
     // (in the editor main.css is an editor style, so there's nothing to wait for)
-    wp_enqueue_style( 'asf-blocks', "$uri/assets/css/blocks.css", is_admin() ? [] : [ 'asf-main' ], $v );
+    [ $url, $ver ] = asf_asset( 'assets/css/blocks.css' );
+    wp_enqueue_style( 'asf-blocks', $url, is_admin() ? [] : [ 'asf-main' ], $ver );
     $slug = asf_current_page_slug();
     if ( $slug && file_exists( get_template_directory() . "/assets/css/pages/$slug.css" ) ) {
-        wp_enqueue_style( "asf-page-$slug", "$uri/assets/css/pages/$slug.css", [ 'asf-blocks' ], $v );
+        [ $url, $ver ] = asf_asset( "assets/css/pages/$slug.css" );
+        wp_enqueue_style( "asf-page-$slug", $url, [ 'asf-blocks' ], $ver );
     }
 }
 add_action( 'enqueue_block_assets', 'asf_block_assets', 20 );

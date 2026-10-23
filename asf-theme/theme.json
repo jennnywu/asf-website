@@ -4,13 +4,41 @@
   "settings": {
     "color": {
       "palette": [
-        { "slug": "seashell",      "color": "#FCF0EE", "name": "Seashell" },
-        { "slug": "almond-silk",   "color": "#DAC9C6", "name": "Almond Silk" },
-        { "slug": "brick-red",     "color": "#A93D2B", "name": "Brick Red" },
-        { "slug": "oxidized-iron", "color": "#9B2616", "name": "Oxidized Iron" },
-        { "slug": "dark-garnet",   "color": "#581409", "name": "Dark Garnet" },
-        { "slug": "white",         "color": "#FFFFFF", "name": "White" },
-        { "slug": "text-dark",     "color": "#1A1A1A", "name": "Text Dark" }
+        {
+          "slug": "seashell",
+          "color": "#FCF0EE",
+          "name": "Seashell"
+        },
+        {
+          "slug": "almond-silk",
+          "color": "#DAC9C6",
+          "name": "Almond Silk"
+        },
+        {
+          "slug": "brick-red",
+          "color": "#A93D2B",
+          "name": "Brick Red"
+        },
+        {
+          "slug": "oxidized-iron",
+          "color": "#9B2616",
+          "name": "Oxidized Iron"
+        },
+        {
+          "slug": "dark-garnet",
+          "color": "#581409",
+          "name": "Dark Garnet"
+        },
+        {
+          "slug": "white",
+          "color": "#FFFFFF",
+          "name": "White"
+        },
+        {
+          "slug": "text-dark",
+          "color": "#1A1A1A",
+          "name": "Text Dark"
+        }
       ],
       "custom": false,
       "customGradient": false
@@ -48,15 +76,6 @@
       "fontFamily": "'Inter', sans-serif",
       "fontSize": "16px",
       "lineHeight": "1.6"
-    },
-    "elements": {
-      "h1": { "typography": { "fontFamily": "'Playfair Display', serif", "fontWeight": "700" } },
-      "h2": { "typography": { "fontFamily": "'Playfair Display', serif", "fontWeight": "700" } },
-      "h3": { "typography": { "fontFamily": "'Playfair Display', serif", "fontWeight": "700" } },
-      "link": {
-        "color": { "text": "#A93D2B" },
-        ":hover": { "color": { "text": "#581409" } }
-      }
     }
   }
 }

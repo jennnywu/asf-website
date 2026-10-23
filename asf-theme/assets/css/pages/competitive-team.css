@@ -92,3 +92,8 @@
 
 /* Assessment button keeps its chevron (drawn by CSS, not editable) */
 .join-section .btn-arrow::after{content:"";width:14px;height:14px;flex-shrink:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.5'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E") center/14px 14px no-repeat}
+
+/* ── CORE BUTTON STYLES (generated) ──
+   WordPress gives button wrappers its own display and margins; restore each style's original ones */
+.wp-block-buttons > .wp-block-button.btn-red{display:inline-flex}
+.wp-block-buttons > .wp-block-button.xcel-promo-btn{display:inline-block}

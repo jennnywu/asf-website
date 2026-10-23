@@ -169,3 +169,10 @@
 .editor-styles-wrapper .hero-slide::after{display:none}
 .editor-styles-wrapper .hero-content{position:relative;inset:auto;grid-column:1/-1;padding:40px 24px}
 .editor-styles-wrapper .program-panel{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;margin-bottom:40px;padding-bottom:40px;border-bottom:1px dashed var(--almond-silk)}
+
+/* ── CORE BUTTON STYLES (generated) ──
+   WordPress gives button wrappers its own display and margins; restore each style's original ones */
+.wp-block-buttons > .wp-block-button.btn-outline{display:inline-block}
+.wp-block-buttons > .wp-block-button.btn-promo{display:inline-block}
+.wp-block-buttons > .wp-block-button.btn-red{display:inline-block}
+.wp-block-buttons > .wp-block-button.program-tab{margin-bottom:-2px;display:flex}

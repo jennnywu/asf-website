@@ -295,3 +295,19 @@ html:not(.camp-tabs-js) .camp-tab-bar > .camp-tab:first-child{color:var(--brick-
   .reg-table .reg-row > .td-reg{padding-top:4px}
   .reg-table .td-reg > .wp-block-button.register-link{font-size:11px;padding:8px;white-space:normal;text-align:center;line-height:1.3;width:100%}
 }
+
+/* Original tabs were <button>s, which use a tighter line height than links */
+.camp-tab-bar.wp-block-buttons > .wp-block-button.camp-tab{line-height:normal}
+
+/* ── CORE BUTTON STYLES (generated) ──
+   WordPress gives button wrappers its own display and margins; restore each style's original ones */
+.wp-block-buttons > .wp-block-button.btn-red{display:inline-block}
+.wp-block-buttons > .wp-block-button.camp-tab{margin-bottom:-2px;display:flex}
+.wp-block-buttons > .wp-block-button.register-link{display:inline-flex}
+
+/* Accordion headers were <button>s, which use a tighter line height */
+.wp-block-details.accordion > summary{line-height:normal}
+
+/* Price line: "<strong>$410</strong> + HST" in one paragraph, like the original nested spans */
+.pricing-row p.price{font-size:12px;font-weight:400;color:var(--text-mid)}
+.pricing-row p.price strong{font-size:16px;font-weight:700;color:var(--brick-red)}

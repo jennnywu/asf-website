@@ -63,3 +63,7 @@ figure.benefit-img-placeholder{margin:0}
 
 /* In the page editor, show the hidden Read More panels so the client can edit them */
 .editor-styles-wrapper .benefit-more{max-height:none;opacity:1;overflow:visible;outline:1px dashed var(--almond-silk);outline-offset:4px}
+
+/* ── CORE BUTTON STYLES (generated) ──
+   WordPress gives button wrappers its own display and margins; restore each style's original ones */
+.wp-block-buttons > .wp-block-button.btn-read-more{display:inline-flex;margin-top:20px}

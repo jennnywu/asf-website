@@ -24,6 +24,7 @@
 .wp-block-table thead{border-bottom:0}
 .wp-block-table td,.wp-block-table th{border:0;padding:0}
 .wp-block-table table.has-fixed-layout{table-layout:auto}
+.wp-block-table .has-fixed-layout td,.wp-block-table .has-fixed-layout th{word-break:normal;overflow-wrap:normal}
 
 /* ── LISTS / QUOTES / DETAILS ── */
 .wp-block-quote{border:0;margin:0;padding:0}

@@ -65,3 +65,8 @@ hr.wp-block-separator.section-divider{border:none;border-top:1px solid var(--alm
 /* Closures table: the class is on the table block's <figure> */
 .wp-block-table.closures-table{width:100%}
 .wp-block-table.closures-table table{width:100%;border-collapse:collapse}
+
+/* ── CORE BUTTON STYLES (generated) ──
+   WordPress gives button wrappers its own display and margins; restore each style's original ones */
+.wp-block-buttons > .wp-block-button.btn-directions{display:inline-flex;margin-top:24px}
+.wp-block-buttons > .wp-block-button.btn-email{display:inline-block}

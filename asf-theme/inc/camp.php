@@ -126,15 +126,12 @@ function asf_camp_fact( $icon, $lines ) {
     return asf_camp_group( asf_camp_group( $inner, 'camp-fact-text', 'Fact text', true ), 'camp-fact ico-' . $icon, 'Fact' );
 }
 
-// One price line: label, price, small "+ HST". A price of "TBC" shows the yellow TBC pill.
+// One price line: label, then "<strong>price</strong> + HST" in one paragraph (bold = the big red price).
+// Italic "TBC" shows the yellow TBC pill.
 function asf_camp_price_row( $label, $price, $sub = '+ HST' ) {
-    if ( 'TBC' === $price ) {
-        $price = '<em>TBC</em>';
-        $sub   = '';
-    }
+    $price  = 'TBC' === $price ? '<em>TBC</em>' : '<strong>' . $price . '</strong>' . ( $sub ? ' ' . $sub : '' );
     $inner  = asf_camp_p( $label, 'label', true );
     $inner .= asf_camp_p( $price, 'price', true );
-    $inner .= asf_camp_p( $sub, 'price-sub', true );
     return asf_camp_group( $inner, 'pricing-row', 'Price row' );
 }
 

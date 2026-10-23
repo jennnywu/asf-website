@@ -70,3 +70,6 @@
 @media(max-width:1024px){
   .gallery-grid .gallery-item{margin-bottom:10px}
 }
+
+/* Filtered-out items stay hidden even when their own rule sets display (placeholder tiles use flex) */
+.gallery-grid .gallery-item.hidden{display:none}

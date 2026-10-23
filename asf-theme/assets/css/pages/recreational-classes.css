@@ -193,3 +193,15 @@ hr.wp-block-separator.section-divider{border:none;border-top:1px solid var(--alm
 /* "View Full Policies (PDF)": centred, external-link icon after the text */
 .policy-cta .wp-block-buttons{justify-content:center}
 .wp-block-button.btn-external::after{content:"";flex-shrink:0;width:12px;height:12px;background-color:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E") no-repeat center/contain;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E") no-repeat center/contain}
+
+/* Original tabs were <button>s: keep their flex layout and tighter line height */
+.wp-block-buttons > .wp-block-button.tab-btn{display:flex;line-height:normal}
+
+/* ── CORE BUTTON STYLES (generated) ──
+   WordPress gives button wrappers its own display and margins; restore each style's original ones */
+.wp-block-buttons > .wp-block-button.btn-red{display:inline-flex}
+.wp-block-buttons > .wp-block-button.class-register-btn{display:block;margin-top:auto}
+.wp-block-buttons > .wp-block-button.tab-btn{display:flex;margin-bottom:-2px}
+
+/* Accordion headers were <button>s, which use a tighter line height */
+.wp-block-details.accordion > summary{line-height:normal}
