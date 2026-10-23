@@ -1,0 +1,94 @@
+/* ── competitive-team page (loaded only on this page) ── */
+.page-hero-tagline{font-size:16px;color:rgba(255,255,255,.7);font-style:italic;margin-bottom:0}
+
+/* ── LOGO BANNER ── */
+.comp-logo-banner{background:var(--seashell);padding:40px 112px;display:flex;align-items:center;gap:32px;border-bottom:1px solid var(--almond-silk)}
+.comp-logo-img{width:80px;height:80px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border-radius:50%;padding:12px}
+.comp-logo-img img{width:100%;height:100%;object-fit:contain;filter:brightness(0) saturate(100%) invert(10%) sepia(89%) saturate(1600%) hue-rotate(338deg) brightness(78%)}
+.comp-logo-text h2{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--dark-garnet);margin-bottom:4px}
+.comp-logo-text p{font-size:13px;color:var(--text-mid);line-height:1.6;max-width:600px}
+
+/* ── ABOUT SECTION ── */
+.about-section{padding:64px 112px 64px;display:grid;grid-template-columns:1fr 320px;gap:56px;align-items:start}
+.about-section-text{min-width:0}
+.section-h2{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--dark-garnet);margin-bottom:16px}
+.about-text{font-size:15px;color:var(--text-mid);line-height:1.8;margin-bottom:12px}
+.about-photo{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px;flex-shrink:0}
+
+/* ── PROGRAMS SECTION ── */
+.programs-section{padding:0 112px 72px}
+.programs-heading{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--dark-garnet);margin-bottom:8px}
+.programs-intro{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:32px;max-width:720px}
+
+.program-card{background:var(--white);border:1.5px solid var(--almond-silk);border-radius:12px;overflow:hidden;margin-bottom:24px;transition:box-shadow .2s}
+.program-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.program-card-header{background:var(--dark-garnet);padding:22px 28px}
+.program-card-header h3{color:#fff;font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;margin-bottom:10px}
+.program-tags{display:flex;flex-wrap:wrap;gap:8px}
+.program-tag{background:rgba(255,255,255,.15);color:var(--almond-silk);font-size:11px;padding:4px 10px;border-radius:20px}
+.program-card-body{padding:24px 28px}
+.program-desc{font-size:14px;color:var(--text-mid);line-height:1.75;margin-bottom:20px}
+.program-icons{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
+.program-icon-row{display:flex;gap:14px;align-items:flex-start;font-size:14px;color:var(--text-mid);line-height:1.6}
+.program-icon{width:32px;height:32px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:var(--seashell);border-radius:8px;color:var(--brick-red)}
+.program-goal{background:var(--seashell);border-left:3px solid var(--brick-red);border-radius:0 6px 6px 0;padding:14px 18px;font-size:13px;color:var(--text-mid);line-height:1.7;font-style:italic}
+.program-goal strong{color:var(--dark-garnet);font-style:normal;display:block;margin-bottom:4px;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+.program-levels{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.level-tag{background:var(--dark-garnet);color:#fff;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:500}
+
+/* ── XCEL PROMO ── */
+.xcel-promo{margin:0 96px 40px;background:var(--dark-garnet);border-radius:12px;padding:28px 32px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.xcel-promo-text h3{color:#fff;font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:6px}
+.xcel-promo-text p{color:rgba(255,255,255,.7);font-size:13px;line-height:1.6}
+.xcel-promo-btn{flex-shrink:0;display:inline-block;background:var(--brick-red);color:#fff;padding:11px 22px;border-radius:4px;font-size:13px;font-weight:600;text-decoration:none;transition:background .2s;white-space:nowrap}
+.xcel-promo-btn:hover{background:var(--oxidized-iron);color:#fff}
+
+/* ── HOW TO JOIN ── */
+.join-section{background:var(--seashell);padding:56px 112px;border-top:1px solid var(--almond-silk)}
+.join-inner{max-width:800px}
+.join-section h2{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--dark-garnet);margin-bottom:8px}
+.join-intro{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:32px}
+.assessment-card{background:#fff;border:1.5px solid var(--almond-silk);border-radius:12px;padding:28px 32px;margin-bottom:28px}
+.assessment-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--dark-garnet);margin-bottom:16px}
+.assessment-steps{list-style:none;padding:0;counter-reset:steps}
+.assessment-steps li{counter-increment:steps;display:flex;gap:14px;padding:10px 0;border-bottom:1px solid var(--almond-silk);font-size:14px;color:var(--text-mid);line-height:1.6}
+.assessment-steps li:last-child{border-bottom:none}
+.assessment-steps li::before{content:counter(steps);width:24px;height:24px;border-radius:50%;background:var(--brick-red);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.assessment-note{font-size:13px;color:var(--text-mid);margin-top:16px;font-style:italic}
+.btn-red{display:inline-flex;align-items:center;gap:8px;background:var(--brick-red);color:#fff;padding:14px 32px;border-radius:4px;font-size:14px;font-weight:600;text-decoration:none;transition:background .2s}
+.btn-red:hover{background:var(--oxidized-iron);color:#fff}
+@media(max-width:1024px){
+  .comp-logo-banner{padding:24px 24px;gap:20px}
+  .about-section{grid-template-columns:1fr;gap:28px;padding:36px 24px}
+  .programs-section{padding:0 24px 48px}
+  .xcel-promo{margin:0 24px 28px;flex-direction:column;gap:16px}
+  .join-section{padding:36px 24px}
+}
+
+
+/* ── BLOCK EDITOR VERSION (core group/image/list/button blocks) ── */
+
+/* Logo + about photo are core image figures: the class is on the <figure>, the img sits inside */
+.comp-logo-banner .comp-logo-img{margin:0}
+.wp-block-image.about-photo{aspect-ratio:auto;border-radius:0}
+.wp-block-image.about-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px}
+
+
+/* Detail-row icons: drawn from the row class (icon-clock / icon-trophy / icon-scholarship) */
+.program-icon-row::before{content:"";width:32px;height:32px;flex-shrink:0;background:var(--seashell) center/16px 16px no-repeat;border-radius:8px}
+.program-icon-row.icon-clock::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A93D2B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E")}
+.program-icon-row.icon-trophy::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A93D2B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9H4.5a2.5 2.5 0 0 1 0-5H6'/%3E%3Cpath d='M18 9h1.5a2.5 2.5 0 0 0 0-5H18'/%3E%3Cpath d='M4 22h16'/%3E%3Cpath d='M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22'/%3E%3Cpath d='M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22'/%3E%3Cpath d='M18 2H6v7a6 6 0 0 0 12 0V2Z'/%3E%3C/svg%3E")}
+.program-icon-row.icon-scholarship::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A93D2B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z'/%3E%3Cpath d='M22 10v6'/%3E%3Cpath d='M6 12.5V16a6 3 0 0 0 12 0v-3.5'/%3E%3C/svg%3E")}
+.program-icon-row>p,.program-icon-row>.program-icon-text{flex:1;min-width:0}
+.program-icon-line{margin-top:4px}
+.program-icon-line-lg{margin-top:6px}
+.program-comp-list{list-style:none;margin:6px 0 0 0;display:flex;flex-direction:column;gap:2px}
+.program-comp-list li::before{content:"\00B7\00A0"}
+.program-proud{margin-top:6px;font-weight:700;color:var(--brick-red)}
+
+/* Xcel promo: text column flexes, button keeps its size */
+.xcel-promo-text{flex:1;min-width:200px}
+.xcel-promo .wp-block-buttons{flex-shrink:0}
+
+/* Assessment button keeps its chevron (drawn by CSS, not editable) */
+.join-section .btn-arrow::after{content:"";width:14px;height:14px;flex-shrink:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.5'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E") center/14px 14px no-repeat}

@@ -1,0 +1,67 @@
+/* ── location-contact page (loaded only on this page) ── */
+/* ── INNER PAGE ── */
+
+/* ── LOCATION LAYOUT ── */
+.location-grid{display:flex;gap:48px;align-items:stretch}
+.location-grid>.map-wrap{flex:1.4;min-width:0}
+.location-grid>.contact-card{flex:1;min-width:0}
+.contact-form-section{margin-top:48px}
+.contact-form-section h2{font-family:'Playfair Display',serif;font-size:26px;color:var(--dark-garnet);margin-bottom:8px}
+.contact-form-section .section-eyebrow{margin-bottom:12px}
+.contact-form-intro{font-size:14px;color:var(--text-mid);margin-bottom:24px;line-height:1.7}
+.btn-email{display:inline-block;background:var(--brick-red);color:#fff;padding:13px 32px;border-radius:4px;font-size:14px;font-weight:600;text-decoration:none;transition:background .2s}
+.btn-email:hover{background:var(--oxidized-iron);color:#fff}
+.form-group input,.form-group select,.form-group textarea{padding:10px 14px;border:1.5px solid var(--almond-silk);border-radius:4px;font-family:;font-size:14px;color:var(--text-dark);background:#fff;transition:border-color .2s;outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--brick-red)}
+.form-group textarea{resize:vertical;min-height:110px}
+.map-wrap{border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);display:flex;flex-direction:column}
+.map-wrap iframe{width:100%;flex:1;min-height:320px;display:block;border:0}
+.contact-card{background:var(--seashell);border-radius:8px;padding:32px}
+.contact-card h2{font-family:'Playfair Display',serif;font-size:22px;color:var(--dark-garnet);margin-bottom:24px}
+.contact-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
+.contact-item:last-child{margin-bottom:0}
+.contact-icon{width:36px;height:36px;background:var(--dark-garnet);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;margin-top:2px}
+.contact-item-body{font-size:14px;line-height:1.7;color:var(--text-mid)}
+.contact-item-body strong{display:block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dark-garnet);margin-bottom:3px}
+.contact-item-body a{color:var(--brick-red);text-decoration:none}
+.contact-item-body a:hover{text-decoration:underline}
+.btn-directions{display:inline-flex;align-items:center;gap:8px;background:var(--brick-red);color:#fff;padding:11px 20px;border-radius:4px;font-size:13px;font-weight:600;text-decoration:none;margin-top:24px;transition:background .2s}
+.btn-directions:hover{background:var(--oxidized-iron)}
+
+/* ── CLOSURES ── */
+.closures-section{margin-top:48px}
+.closures-section h2{font-family:'Playfair Display',serif;font-size:26px;color:var(--dark-garnet);margin-bottom:28px}
+.closures-table{width:100%;border-collapse:collapse}
+.closures-table th{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dark-garnet);text-align:left;padding:10px 16px;border-bottom:2px solid var(--almond-silk)}
+.closures-table td{font-size:14px;padding:12px 16px;border-bottom:1px solid rgba(218,201,198,.4);color:var(--text-mid);vertical-align:top}
+.closures-table tr:last-child td{border-bottom:none}
+.closures-table tr:nth-child(even) td{background:var(--seashell)}
+.closures-note{margin-top:16px;font-size:13px;color:var(--text-mid);opacity:.8}
+@media(max-width:1024px){
+  .location-grid{flex-direction:column;gap:24px}
+}
+
+
+/* ── BLOCK EDITOR VERSION (core group/table/button/separator blocks) ── */
+/* Contact icons: drawn from the row class (icon-pin / icon-phone / icon-email / icon-clock) */
+.contact-item::before{content:"";width:36px;height:36px;flex-shrink:0;margin-top:2px;border-radius:6px;background:var(--dark-garnet) center/16px 16px no-repeat}
+.contact-item.icon-pin::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E")}
+.contact-item.icon-phone::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z'/%3E%3C/svg%3E")}
+.contact-item.icon-email::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E")}
+.contact-item.icon-clock::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 13H11v-6l5.25 3.15-.75 1.23-4.5-2.67V7h1.5v5.25l3.5 2.1-.5.65z'/%3E%3C/svg%3E")}
+.contact-item>.contact-item-body{flex:1;min-width:0}
+
+/* Map: the iframe lives in a Custom HTML block inside .map-wrap */
+.map-wrap>iframe,.map-wrap>.wp-block-html{flex:1}
+.map-wrap>.wp-block-html{display:flex;flex-direction:column}
+
+/* Directions button keeps its arrow icon (drawn by CSS, not editable) */
+.btn-directions::before{content:"";width:14px;height:14px;flex-shrink:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M21.71 11.29l-9-9a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 0 1.42l9 9a1 1 0 0 0 1.42 0l9-9a1 1 0 0 0 0-1.42zM14 14.5V12h-4v3H8v-4a1 1 0 0 1 1-1h5V7.5l3.5 3.5-3.5 3.5z'/%3E%3C/svg%3E") center/14px 14px no-repeat}
+.btn-directions:hover{color:#fff}
+
+/* Divider is a core separator: undo core separator styling */
+hr.wp-block-separator.section-divider{border:none;border-top:1px solid var(--almond-silk);margin:48px 0;opacity:1;width:auto;max-width:none;background:none;height:0}
+
+/* Closures table: the class is on the table block's <figure> */
+.wp-block-table.closures-table{width:100%}
+.wp-block-table.closures-table table{width:100%;border-collapse:collapse}

@@ -1,0 +1,107 @@
+/* ── xcel page (loaded only on this page) ── */
+.page-hero-tagline{font-size:16px;color:rgba(255,255,255,.7);font-style:italic;margin-bottom:0}
+
+/* ── INTRO BANNER ── */
+.intro-banner{background:var(--seashell);padding:32px 112px;border-bottom:1px solid var(--almond-silk)}
+.intro-banner-inner{display:flex;align-items:flex-start;gap:24px;max-width:900px}
+.intro-icon{width:48px;height:48px;flex-shrink:0;background:var(--dark-garnet);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.intro-icon svg{color:#fff}
+.intro-text h2{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--dark-garnet);margin-bottom:6px}
+.intro-text p{font-size:14px;color:var(--text-mid);line-height:1.75}
+
+/* ── ABOUT SECTION ── */
+.about-section{padding:48px 112px;max-width:900px}
+.section-h2{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--dark-garnet);margin-bottom:16px}
+.about-text{font-size:15px;color:var(--text-mid);line-height:1.8;margin-bottom:12px}
+
+/* ── PROGRAMS SECTION ── */
+.programs-section{padding:0 112px 56px}
+.programs-heading{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--dark-garnet);margin-bottom:8px}
+.programs-intro{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:32px;max-width:720px}
+
+.program-card{background:var(--white);border:1.5px solid var(--almond-silk);border-radius:12px;overflow:hidden;margin-bottom:24px;transition:box-shadow .2s}
+.program-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.program-card-header{background:var(--dark-garnet);padding:22px 28px}
+.program-card-header h3{color:#fff;font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;margin-bottom:10px}
+.program-tags{display:flex;flex-wrap:wrap;gap:8px}
+.program-tag{background:rgba(255,255,255,.15);color:var(--almond-silk);font-size:11px;padding:4px 10px;border-radius:20px}
+.program-card-body{padding:24px 28px}
+.program-desc{font-size:14px;color:var(--text-mid);line-height:1.75;margin-bottom:20px}
+.program-icons{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
+.program-icon-row{display:flex;gap:14px;align-items:flex-start;font-size:14px;color:var(--text-mid);line-height:1.6}
+.program-icon{width:32px;height:32px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:var(--seashell);border-radius:8px;color:var(--brick-red)}
+.program-goal{background:var(--seashell);border-left:3px solid var(--brick-red);border-radius:0 6px 6px 0;padding:14px 18px;font-size:13px;color:var(--text-mid);line-height:1.7;font-style:italic}
+.program-goal strong{color:var(--dark-garnet);font-style:normal;display:block;margin-bottom:4px;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+.level-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.level-badge{background:var(--almond-silk);color:var(--dark-garnet);font-size:11px;padding:4px 12px;border-radius:20px;font-weight:600}
+
+/* ── PATHWAY DIAGRAM ── */
+.pathway-section{margin:0 auto 48px;max-width:680px;background:var(--seashell);border-radius:12px;padding:28px 32px}
+.pathway-section h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--dark-garnet);margin-bottom:20px;text-align:center}
+.pathway-flow{display:flex;align-items:center;flex-wrap:wrap;gap:8px;justify-content:center}
+.pathway-step{background:var(--dark-garnet);color:#fff;padding:10px 16px;border-radius:6px;font-size:13px;font-weight:500;text-align:center;min-width:120px}
+.pathway-step em{display:block;font-size:10px;font-style:normal;opacity:.65;margin-top:2px}
+.pathway-arrow{color:var(--almond-silk);font-size:20px;line-height:1}
+.pathway-fork{display:flex;flex-direction:column;gap:8px}
+.pathway-fork-label{font-size:11px;color:var(--text-mid);font-weight:600;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em}
+.pathway-step.alt{background:var(--brick-red)}
+
+/* ── COMP PROMO ── */
+.comp-promo{margin:0 112px 40px;background:var(--dark-garnet);border-radius:12px;padding:28px 32px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.comp-promo-text{flex:1;min-width:200px}
+.comp-promo-text h3{color:#fff;font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:6px}
+.comp-promo-text p{color:rgba(255,255,255,.7);font-size:13px;line-height:1.6}
+.comp-promo-btn{flex-shrink:0;display:inline-block;background:var(--brick-red);color:#fff;padding:11px 22px;border-radius:4px;font-size:13px;font-weight:600;text-decoration:none;transition:background .2s;white-space:nowrap}
+.comp-promo-btn:hover{background:var(--oxidized-iron);color:#fff}
+
+/* ── HOW TO JOIN ── */
+.join-section{background:var(--seashell);padding:56px 112px;border-top:1px solid var(--almond-silk)}
+.join-inner{max-width:800px}
+.join-section h2{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--dark-garnet);margin-bottom:8px}
+.join-intro{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:32px}
+.assessment-card{background:#fff;border:1.5px solid var(--almond-silk);border-radius:12px;padding:28px 32px;margin-bottom:28px}
+.assessment-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--dark-garnet);margin-bottom:16px}
+.assessment-steps{list-style:none;padding:0;counter-reset:steps}
+.assessment-steps li{counter-increment:steps;display:flex;gap:14px;padding:10px 0;border-bottom:1px solid var(--almond-silk);font-size:14px;color:var(--text-mid);line-height:1.6}
+.assessment-steps li:last-child{border-bottom:none}
+.assessment-steps li::before{content:counter(steps);width:24px;height:24px;border-radius:50%;background:var(--brick-red);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.assessment-note{font-size:13px;color:var(--text-mid);margin-top:16px;font-style:italic}
+.btn-red{display:inline-flex;align-items:center;gap:8px;background:var(--brick-red);color:#fff;padding:14px 32px;border-radius:4px;font-size:14px;font-weight:600;text-decoration:none;transition:background .2s}
+.btn-red:hover{background:var(--oxidized-iron);color:#fff}
+@media(max-width:1024px){
+  .intro-banner{padding:20px 24px}
+  .about-section{padding:32px 24px}
+  .programs-section{padding:0 24px 36px}
+  .comp-promo{margin:0 24px 28px;flex-direction:column;gap:16px}
+  .join-section{padding:36px 24px}
+  .pathway-section{padding:20px 24px}
+}
+
+
+/* ── BLOCK EDITOR VERSION ── */
+/* Overview star icon (drawn by CSS, was an inline SVG) */
+.intro-banner-inner::before{content:"";width:48px;height:48px;flex-shrink:0;border-radius:50%;margin-top:2px;background:var(--dark-garnet) no-repeat center/22px 22px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/%3E%3C/svg%3E")}
+.intro-text{flex:1;min-width:0}
+
+/* Program card key facts: each row is a paragraph, icon from its icon-* class */
+.program-icons p.program-icon-row{display:block;position:relative;padding-left:46px;min-height:32px}
+.program-icons p.program-icon-row::before{content:"";position:absolute;left:0;top:0;width:32px;height:32px;border-radius:8px;background:var(--seashell) no-repeat center/16px 16px}
+.program-icon-row.icon-clock::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A93D2B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E")}
+.program-icon-row.icon-trophy::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A93D2B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9H4.5a2.5 2.5 0 0 1 0-5H6'/%3E%3Cpath d='M18 9h1.5a2.5 2.5 0 0 0 0-5H18'/%3E%3Cpath d='M4 22h16'/%3E%3Cpath d='M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22'/%3E%3Cpath d='M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22'/%3E%3Cpath d='M18 2H6v7a6 6 0 0 0 12 0V2Z'/%3E%3C/svg%3E")}
+.program-icon-row.icon-trend::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A93D2B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='22 7 13.5 15.5 8.5 10.5 2 17'/%3E%3Cpolyline points='16 7 22 7 22 13'/%3E%3C/svg%3E")}
+
+/* ASF Goal box: label paragraph replaces the <strong> */
+.program-goal p{margin:0}
+.program-goal .program-goal-label{color:var(--dark-garnet);font-style:normal;font-weight:700;margin-bottom:4px;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+
+/* Pathway diagram: each step is a group with a title + small sub line (was <em>) */
+.pathway-flow p,.pathway-fork p{margin:0}
+.pathway-step .pathway-step-sub{font-size:10px;opacity:.65;margin-top:2px}
+
+/* Competitive Team promo button (class sits on the button wrapper) */
+.comp-promo > .wp-block-buttons{flex-shrink:0}
+
+/* How to Join: numbered steps as block list items (block layout so bold text inside stays inline) */
+.assessment-steps li{display:block;position:relative;padding-left:38px}
+.assessment-steps li::before{position:absolute;left:0;top:11px;margin-top:0}
+.join-inner .wp-block-button.btn-red::after{content:"";width:14px;height:14px;flex-shrink:0;background:no-repeat center/14px 14px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.5'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E")}

@@ -42,43 +42,22 @@
   if (overlay) overlay.addEventListener('click', closeNav);
 
   /* ── ACTIVE NAV STATE ── */
-  var ABOUT_PAGES    = ['/our-facility', '/location-contact', '/benefits', '/coaching-team'];
-  var PROGRAMS_PAGES = ['/which-program', '/camp', '/recreational-classes', '/xcel', '/competitive-team', '/birthday'];
+  // Highlights the menu link for the current page (works with whatever links are in the menu)
+  // and opens its fold-out section
   var path = window.location.pathname.replace(/\/$/, '');
 
-  var navMenu = document.querySelector('.nav-menu');
-  if (navMenu) {
-    var items = navMenu.children;
-    if (path === '' || path === '/') {
-      if (items[0]) items[0].classList.add('active');
-    } else if (ABOUT_PAGES.some(function (s) { return path === s || path.indexOf(s + '/') === 0; })) {
-      var aboutBtn = items[1] && items[1].querySelector('.nav-parent');
-      var aboutDrop = items[1] && items[1].querySelector('.nav-dropdown');
-      if (aboutBtn)  { aboutBtn.setAttribute('aria-expanded', 'true'); }
-      if (aboutDrop) {
-        aboutDrop.classList.add('open');
-        [].forEach.call(aboutDrop.querySelectorAll('a'), function (a) {
-          try {
-            if (new URL(a.href).pathname.replace(/\/$/, '') === path) a.parentNode.classList.add('active');
-          } catch (e) {}
-        });
-      }
-    } else if (PROGRAMS_PAGES.some(function (s) { return path === s || path.indexOf(s + '/') === 0; })) {
-      var pgBtn  = items[2] && items[2].querySelector('.nav-parent');
-      var pgDrop = items[2] && items[2].querySelector('.nav-dropdown');
-      if (pgBtn)  { pgBtn.setAttribute('aria-expanded', 'true'); }
-      if (pgDrop) {
-        pgDrop.classList.add('open');
-        [].forEach.call(pgDrop.querySelectorAll('a'), function (a) {
-          try {
-            if (new URL(a.href).pathname.replace(/\/$/, '') === path) a.parentNode.classList.add('active');
-          } catch (e) {}
-        });
-      }
-    } else if (path === '/gallery') {
-      if (items[3]) items[3].classList.add('active');
+  [].forEach.call(document.querySelectorAll('.nav-menu a'), function (a) {
+    var url;
+    try { url = new URL(a.href); } catch (e) { return; }
+    if (url.origin !== window.location.origin || url.hash || url.pathname.replace(/\/$/, '') !== path) return;
+    a.parentNode.classList.add('active');
+    var drop = a.closest('.nav-dropdown');
+    if (drop) {
+      drop.classList.add('open');
+      var btn = drop.previousElementSibling;
+      if (btn) btn.setAttribute('aria-expanded', 'true');
     }
-  }
+  });
 
   /* ── BACK TO TOP ── */
   var btt = document.createElement('button');

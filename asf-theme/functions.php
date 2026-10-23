@@ -1,6 +1,11 @@
 <?php
 /* ── HELPER ── */
-function asf_opt( $key, $fallback = '' ) {
+// A Customizer value, or its default from asf_defaults() (inc/site.php)
+function asf_opt( $key, $fallback = null ) {
+    if ( null === $fallback ) {
+        $defaults = asf_defaults();
+        $fallback = isset( $defaults[ $key ] ) ? $defaults[ $key ] : '';
+    }
     return get_theme_mod( $key, $fallback );
 }
 
@@ -26,13 +31,59 @@ function asf_scripts() {
         $v,
         true
     );
+
+    // Page-specific script: assets/js/pages/{slug}.js
+    $slug = asf_current_page_slug();
+    if ( $slug && file_exists( get_template_directory() . "/assets/js/pages/$slug.js" ) ) {
+        wp_enqueue_script( "asf-page-$slug", get_template_directory_uri() . "/assets/js/pages/$slug.js", [], $v, true );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'asf_scripts' );
+
+// Block styles and page-specific CSS (assets/css/pages/{slug}.css), on the site and in the page editor
+function asf_block_assets() {
+    $v   = wp_get_theme()->get( 'Version' );
+    $uri = get_template_directory_uri();
+    // On the site these load after main.css so page rules win, as in the original HTML
+    // (in the editor main.css is an editor style, so there's nothing to wait for)
+    wp_enqueue_style( 'asf-blocks', "$uri/assets/css/blocks.css", is_admin() ? [] : [ 'asf-main' ], $v );
+    $slug = asf_current_page_slug();
+    if ( $slug && file_exists( get_template_directory() . "/assets/css/pages/$slug.css" ) ) {
+        wp_enqueue_style( "asf-page-$slug", "$uri/assets/css/pages/$slug.css", [ 'asf-blocks' ], $v );
+    }
+}
+add_action( 'enqueue_block_assets', 'asf_block_assets', 20 );
+
+// Slug used to pick page-specific files: "home" on the front page, otherwise the page's slug.
+// In the editor it comes from the page being edited.
+function asf_current_page_slug() {
+    if ( is_admin() ) {
+        $post = get_post();
+        if ( ! $post || 'page' !== $post->post_type ) {
+            return '';
+        }
+        return (int) get_option( 'page_on_front' ) === $post->ID ? 'home' : $post->post_name;
+    }
+    if ( is_front_page() ) {
+        return 'home';
+    }
+    return is_page() ? get_post_field( 'post_name', get_queried_object_id() ) : '';
+}
+
+// Show text exactly as typed: WordPress would otherwise turn " - " into a dash and "..." into "…"
+add_filter( 'run_wptexturize', '__return_false' );
+
+/* ── PAGE HELPERS ── */
+// Page-specific pattern builders live in /inc (one file per page)
+foreach ( glob( get_template_directory() . '/inc/*.php' ) as $asf_inc ) {
+    require_once $asf_inc;
+}
 
 /* ── THEME SETUP ── */
 function asf_theme_setup() {
     add_theme_support( 'title-tag' );
     add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'responsive-embeds' );
     add_theme_support( 'html5', [ 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ] );
     add_theme_support( 'custom-logo', [
         'height'      => 80,
@@ -40,10 +91,6 @@ function asf_theme_setup() {
         'flex-height' => true,
         'flex-width'  => true,
     ] );
-    register_nav_menus( [
-        'primary' => __( 'Primary Navigation', 'asf' ),
-    ] );
-
     // Load the site's own stylesheet in the page editor so it looks like the live page
     add_theme_support( 'editor-styles' );
     add_editor_style( [
@@ -64,7 +111,8 @@ add_action( 'init', 'asf_pattern_category' );
 // Rendered pattern markup, used as a page's default until the client saves their own content
 function asf_pattern_content( $slug ) {
     $pattern = WP_Block_Patterns_Registry::get_instance()->get_registered( $slug );
-    return $pattern ? do_blocks( $pattern['content'] ) : '';
+    // Same filters as saved page content (blocks, embeds, shortcodes)
+    return $pattern ? apply_filters( 'the_content', $pattern['content'] ) : '';
 }
 // Block markup for one coach card (shared by the Coach and Coaching Team page patterns)
 function asf_coach_block( $photo, $name, $title, $bio ) {
@@ -111,45 +159,55 @@ add_action( 'wp_head', 'asf_admin_bar_css' );
 /* ── CUSTOMIZER ── */
 function asf_customize_register( $wp_customize ) {
 
-    /* Contact Info */
+    $defaults = asf_defaults();
+
+    /* Sidebar & Footer (contact details, hours, logos) */
     $wp_customize->add_section( 'asf_contact', [
-        'title'    => __( 'Contact Info', 'asf' ),
-        'priority' => 30,
+        'title'       => __( 'Sidebar & Footer', 'asf' ),
+        'description' => __( 'Details shown in the left sidebar and the footer on every page. Links in the sidebar and footer columns are edited in Appearance → Menus. The main logo is under Site Identity.', 'asf' ),
+        'priority'    => 30,
     ] );
-    $contact_fields = [
-        'asf_address'        => [ 'label' => 'Address',         'default' => '40 Vogell Road, Unit 32, Richmond Hill, ON L4B 3N6' ],
-        'asf_phone'          => [ 'label' => 'Phone',           'default' => '905-780-0913' ],
-        'asf_email'          => [ 'label' => 'Email',           'default' => 'info@academysportfitness.ca' ],
-        'asf_footer_tagline' => [ 'label' => 'Footer Tagline',  'default' => 'Richmond Hill\'s gymnastics home since 1998.' ],
+    $fields = [
+        'asf_logo_text'        => [ 'Name next to the logo (new line = line break)', 'textarea', 'sanitize_textarea_field' ],
+        'asf_business_name'    => [ 'Business name (mobile top bar and copyright line)', 'text', 'sanitize_text_field' ],
+        'asf_address'          => [ 'Address (also used for the Google Maps link)', 'textarea', 'sanitize_textarea_field' ],
+        'asf_phone'            => [ 'Phone', 'text', 'sanitize_text_field' ],
+        'asf_email'            => [ 'Email', 'email', 'sanitize_email' ],
+        'asf_contact_heading'  => [ 'Footer contact column heading', 'text', 'sanitize_text_field' ],
+        'asf_hours_heading'    => [ 'Open hours heading', 'text', 'sanitize_text_field' ],
+        'asf_hours'            => [ 'Open hours (one line per row)', 'textarea', 'sanitize_textarea_field' ],
+        'asf_footer_tagline'   => [ 'Footer description', 'textarea', 'sanitize_textarea_field' ],
+        'asf_instagram_url'    => [ 'Instagram link (footer button)', 'url', 'esc_url_raw' ],
+        'asf_cta_text'         => [ 'Sidebar button text', 'text', 'sanitize_text_field' ],
+        'asf_registration_url' => [ 'Sidebar button link (Jackrabbit registration)', 'url', 'esc_url_raw' ],
     ];
-    foreach ( $contact_fields as $key => $args ) {
+    foreach ( $fields as $key => $field ) {
         $wp_customize->add_setting( $key, [
-            'default'           => $args['default'],
-            'sanitize_callback' => 'sanitize_text_field',
+            'default'           => $defaults[ $key ],
+            'sanitize_callback' => $field[2],
             'transport'         => 'refresh',
         ] );
         $wp_customize->add_control( $key, [
-            'label'   => __( $args['label'], 'asf' ),
+            'label'   => $field[0],
             'section' => 'asf_contact',
-            'type'    => 'text',
+            'type'    => $field[1],
         ] );
     }
-
-    /* Registration */
-    $wp_customize->add_section( 'asf_registration', [
-        'title'    => __( 'Registration', 'asf' ),
-        'priority' => 35,
-    ] );
-    $wp_customize->add_setting( 'asf_registration_url', [
-        'default'           => 'https://app.jackrabbitclass.com/regv2.asp?id=540626',
-        'sanitize_callback' => 'esc_url_raw',
-        'transport'         => 'refresh',
-    ] );
-    $wp_customize->add_control( 'asf_registration_url', [
-        'label'   => __( 'Jackrabbit Registration Base URL', 'asf' ),
-        'section' => 'asf_registration',
-        'type'    => 'url',
-    ] );
+    $logos = [
+        'asf_footer_logo_1' => 'Footer logo 1 (Gymnastics Ontario)',
+        'asf_footer_logo_2' => 'Footer logo 2 (NCCP)',
+    ];
+    foreach ( $logos as $key => $label ) {
+        $wp_customize->add_setting( $key, [
+            'default'           => $defaults[ $key ],
+            'sanitize_callback' => 'esc_url_raw',
+            'transport'         => 'refresh',
+        ] );
+        $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $key, [
+            'label'   => $label,
+            'section' => 'asf_contact',
+        ] ) );
+    }
 
     /* Brand Colors */
     $wp_customize->add_section( 'asf_colors', [

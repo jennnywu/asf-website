@@ -1,0 +1,30 @@
+/* ================================================================
+   Core block resets: lets the theme's own classes (from main.css and
+   assets/css/pages/*.css) style editor blocks exactly like the original HTML.
+   Loaded on the site and inside the page editor.
+   ================================================================ */
+
+/* ── BUTTONS ──
+   WordPress puts a button block's class (btn-red, btn-primary, ...) on the wrapper div,
+   so the wrapper carries the look and the link inside just fills it */
+.wp-block-buttons{display:flex;flex-wrap:wrap;align-items:center}
+.wp-block-button{position:relative}
+.wp-block-button > .wp-block-button__link{all:unset;color:inherit;font:inherit;letter-spacing:inherit;cursor:pointer}
+.wp-block-button > .wp-block-button__link::after{content:"";position:absolute;inset:0}
+.wp-block-button:focus-within{outline:2px solid var(--brick-red);outline-offset:2px}
+
+/* ── FIGURES / MEDIA ── */
+.wp-block-image,.wp-block-table,.wp-block-embed,.wp-block-gallery{margin:0}
+.wp-block-image img{display:block}
+.wp-block-embed__wrapper iframe{width:100%;height:auto;aspect-ratio:16/9;display:block;border:0}
+
+/* ── TABLES ── */
+.wp-block-table{overflow-x:visible}
+.wp-block-table table{border-collapse:collapse;width:100%}
+.wp-block-table thead{border-bottom:0}
+.wp-block-table td,.wp-block-table th{border:0;padding:0}
+.wp-block-table table.has-fixed-layout{table-layout:auto}
+
+/* ── LISTS / QUOTES / DETAILS ── */
+.wp-block-quote{border:0;margin:0;padding:0}
+.wp-block-details summary{cursor:pointer}

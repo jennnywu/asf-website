@@ -1,0 +1,65 @@
+/* ── benefits page (loaded only on this page) ── */
+/* ── INTRO BAND ── */
+.intro-band{background:var(--seashell);padding:40px 64px;border-bottom:1px solid var(--almond-silk)}
+.intro-band p{max-width:720px;font-size:17px;line-height:1.75;color:var(--text-mid)}
+.intro-band strong{color:var(--dark-garnet)}
+
+/* ── BENEFIT SECTIONS ── */
+.benefits-list{padding:0 64px 80px}
+.benefit-block{display:grid;grid-template-columns:1.6fr 1fr;gap:56px;align-items:start;padding:64px 0;border-bottom:1px solid rgba(218,201,198,.4)}
+.benefit-block:last-child{border-bottom:none}
+.benefit-block.reverse{direction:rtl}
+.benefit-block.reverse>*{direction:ltr}
+.benefit-text .section-eyebrow{display:block;margin-bottom:10px}
+.benefit-text h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.5vw,2rem);font-weight:700;color:var(--dark-garnet);margin-bottom:20px;line-height:1.2}
+.benefit-text p{font-size:15px;line-height:1.8;color:var(--text-mid);margin-bottom:14px}
+.benefit-text p:last-child{margin-bottom:0}
+.benefit-bullets{list-style:none;margin-top:16px}
+.benefit-bullets li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text-mid);margin-bottom:10px;line-height:1.6}
+.benefit-bullets li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--brick-red);flex-shrink:0;margin-top:7px}
+.benefit-more{overflow:hidden;max-height:0;transition:max-height .4s ease,opacity .3s ease;opacity:0}
+.benefit-more.open{max-height:800px;opacity:1}
+.benefit-more-inner{padding-top:20px;border-top:1px solid rgba(218,201,198,.5);margin-top:20px}
+.benefit-more-inner h4{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dark-garnet);margin-bottom:12px}
+.apparatus-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:0}
+.apparatus-item{background:var(--seashell);border-radius:6px;padding:12px 14px}
+.apparatus-item .apparatus-name{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-garnet);margin-bottom:4px}
+.apparatus-item .apparatus-takeaway{font-size:13px;color:var(--text-mid);line-height:1.5}
+.apparatus-item .apparatus-takeaway em{font-style:italic;color:var(--brick-red)}
+.btn-read-more{display:inline-flex;align-items:center;gap:8px;margin-top:20px;background:none;border:1px solid var(--brick-red);color:var(--brick-red);padding:8px 18px;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s,color .2s;line-height:1}
+.btn-read-more:hover{background:var(--brick-red);color:#fff}
+.btn-read-more svg.arrow{flex-shrink:0;transition:transform .3s;display:block}
+.btn-read-more.open svg.arrow{transform:rotate(180deg)}
+.cite{font-size:11px;color:var(--brick-red);font-weight:600;white-space:nowrap}
+.references-section{background:var(--seashell);padding:40px 64px;border-top:1px solid var(--almond-silk)}
+.references-section h3{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--dark-garnet);margin-bottom:16px}
+.references-section ol{padding-left:20px;font-size:12px;color:var(--text-mid);line-height:1.9;opacity:.75}
+.benefit-img-placeholder{border-radius:10px;overflow:hidden;background:linear-gradient(135deg,var(--almond-silk) 0%,#c9b0ac 100%)}
+.benefit-img-placeholder img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+@media(max-width:1024px){
+  .intro-band{padding:32px 24px}
+  .benefits-list{padding:0 24px 48px}
+  .benefit-block{grid-template-columns:1fr;gap:28px;padding:40px 0}
+  .references-section{padding:32px 24px}
+}
+
+
+/* ── BLOCK EDITOR VERSION (core group/image/list/button blocks) ── */
+/* The eyebrow is a paragraph now: keep its own size/colour instead of the body-text paragraph style */
+.benefit-text p.section-eyebrow{font-size:11px;line-height:inherit;color:var(--brick-red);margin-bottom:10px}
+.apparatus-item p.apparatus-name{line-height:inherit}
+.benefit-more-inner h4.benefit-more-sub{margin-top:16px}
+.benefit-text p.benefit-note{margin-top:14px;font-size:13px;color:var(--text-mid)}
+
+/* Citation numbers [1] are superscript text: show them like the original red .cite label */
+.benefit-bullets sup{vertical-align:baseline;font-size:11px;color:var(--brick-red);font-weight:600;white-space:nowrap;line-height:inherit}
+
+/* Photo: the class is on the <figure>, the img sits inside */
+figure.benefit-img-placeholder{margin:0}
+
+/* Read More button: a core button linking to #more-N; the chevron is drawn by CSS */
+.btn-read-more::after{content:"";width:14px;height:14px;flex-shrink:0;display:block;background-color:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") center/14px 14px no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") center/14px 14px no-repeat;transition:transform .3s}
+.btn-read-more.open::after{transform:rotate(180deg)}
+
+/* In the page editor, show the hidden Read More panels so the client can edit them */
+.editor-styles-wrapper .benefit-more{max-height:none;opacity:1;overflow:visible;outline:1px dashed var(--almond-silk);outline-offset:4px}

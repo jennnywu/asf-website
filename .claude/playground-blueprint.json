@@ -1,12 +1,18 @@
 {
-  "landingPage": "/coaching-team/",
+  "landingPage": "/",
   "login": true,
   "steps": [
+    { "step": "mkdir", "path": "/wordpress/wp-content/mu-plugins" },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/mu-plugins/asf-local-testing.php",
+      "data": "<?php\n// LOCAL TEST SITE ONLY (WordPress Playground), not part of the theme.\n// Theme development mode: new pattern files show up without bumping the theme version.\nif ( ! defined( 'WP_DEVELOPMENT_MODE' ) ) { define( 'WP_DEVELOPMENT_MODE', 'theme' ); }\n// The test server can't reliably reach YouTube's oEmbed service, so build the player directly.\nadd_filter( 'pre_oembed_result', function ( $result, $url ) {\n    if ( preg_match( '~youtube\\.com/watch\\?v=([\\w-]+)~', $url, $m ) ) {\n        return '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/' . $m[1] . '\" title=\"YouTube video\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>';\n    }\n    return $result;\n}, 10, 2 );\n"
+    },
     { "step": "activateTheme", "themeFolderName": "asf-theme" },
     { "step": "setSiteOptions", "options": { "permalink_structure": "/%postname%/", "blogname": "Academy of Sport and Fitness" } },
     {
       "step": "runPHP",
-      "code": "<?php require '/wordpress/wp-load.php'; wp_set_current_user( 1 ); $p = WP_Block_Patterns_Registry::get_instance()->get_registered( 'asf/coaching-team-page' ); wp_insert_post( [ 'post_type' => 'page', 'post_status' => 'publish', 'post_title' => 'Coaching Team', 'post_name' => 'coaching-team', 'post_content' => $p['content'], 'page_template' => 'page-coaching-team.php' ] ); flush_rewrite_rules();"
+      "code": "<?php require '/wordpress/wp-load.php'; wp_set_current_user( 1 ); $pages = [ 'home' => 'Home', 'our-facility' => 'Our Facility', 'location-contact' => 'Location & Contact', 'benefits' => 'Benefits', 'coaching-team' => 'Coaching Team', 'which-program' => 'Find the Right Program', 'camp' => 'Camps', 'recreational-classes' => 'Recreational Classes', 'xcel' => 'Xcel / Advanced', 'competitive-team' => 'Competitive Team', 'birthday' => 'Birthday Parties', 'gallery' => 'Gallery' ]; $reg = WP_Block_Patterns_Registry::get_instance(); foreach ( $pages as $slug => $title ) { $p = $reg->get_registered( \"asf/$slug-page\" ); $id = wp_insert_post( [ 'post_type' => 'page', 'post_status' => 'publish', 'post_title' => $title, 'post_name' => $slug, 'post_content' => $p ? $p['content'] : '' ] ); if ( 'home' === $slug ) { update_option( 'show_on_front', 'page' ); update_option( 'page_on_front', $id ); } } flush_rewrite_rules();"
     }
   ]
 }

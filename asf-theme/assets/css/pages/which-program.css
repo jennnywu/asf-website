@@ -1,0 +1,115 @@
+/* ── which-program page (loaded only on this page) ── */
+.page-hero-tagline{font-size:16px;color:rgba(255,255,255,.7);font-style:italic;margin:0}
+
+/* ── FINDER INTRO ── */
+.finder-intro{padding:40px 112px 0;border-bottom:none}
+.finder-intro p{font-size:16px;color:var(--text-mid);line-height:1.8;max-width:720px}
+
+/* ── FILTERS ── */
+.finder-filters{padding:32px 112px 40px;border-bottom:1px solid var(--almond-silk);display:flex;flex-direction:column;gap:24px}
+.filter-group{display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap}
+.filter-label{font-size:13px;font-weight:600;color:var(--text-dark);min-width:180px;padding-top:6px;flex-shrink:0}
+.filter-chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:7px 16px;border-radius:20px;border:1.5px solid var(--almond-silk);background:#fff;color:var(--text-mid);font-size:13px;font-weight:500;cursor:pointer;transition:background .15s,border-color .15s,color .15s;font-family:inherit;line-height:1}
+.chip:hover{border-color:var(--brick-red);color:var(--brick-red)}
+.chip.selected{background:var(--brick-red);border-color:var(--brick-red);color:#fff}
+
+/* ── RESULTS ── */
+.finder-results-header{padding:36px 112px 20px;display:flex;align-items:baseline;gap:12px}
+.finder-results-header h2{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--text-dark)}
+.result-count{font-size:13px;color:var(--text-mid)}
+.prog-grid{padding:0 112px 64px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.prog-card{border:1px solid var(--almond-silk);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
+.prog-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.prog-card.hidden{display:none}
+.prog-card-accent{height:4px}
+.prog-card-accent.open{background:var(--brick-red)}
+.prog-card-accent.assessment{background:#c47f00}
+.prog-card-accent.invite{background:var(--dark-garnet)}
+.prog-card-body{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.prog-card-title-row{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.prog-card-title-row h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--dark-garnet);line-height:1.25}
+.prog-badge{flex-shrink:0;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:10px;white-space:nowrap}
+.prog-badge.open{background:rgba(169,61,43,.1);color:var(--brick-red)}
+.prog-badge.assessment{background:rgba(196,127,0,.12);color:#8a5f00}
+.prog-badge.invite{background:rgba(88,20,9,.1);color:var(--dark-garnet)}
+.prog-meta{display:flex;gap:16px;flex-wrap:wrap}
+.prog-meta-item{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text-mid)}
+.prog-meta-item svg{color:var(--brick-red);flex-shrink:0}
+.prog-desc{font-size:13px;color:var(--text-mid);line-height:1.75;flex:1}
+.prog-bestfor{font-size:12px;color:var(--text-mid);padding:10px 12px;background:var(--seashell);border-radius:4px;line-height:1.6}
+.prog-bestfor strong{color:var(--text-dark);font-weight:600}
+.prog-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--brick-red);text-decoration:none;margin-top:4px}
+.prog-link:hover{color:var(--oxidized-iron)}
+.no-results{padding:40px 112px;text-align:center;display:none}
+.no-results-inner{background:var(--seashell);border-radius:8px;padding:48px 32px;max-width:540px;margin:0 auto}
+.no-results-inner h3{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin-bottom:10px;color:var(--text-dark)}
+.no-results-inner p{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:20px}
+
+/* ── STUCK PROMPT ── */
+.finder-stuck{margin:0 112px 32px;padding:20px 28px;background:var(--seashell);border:1px solid var(--almond-silk);border-radius:8px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.finder-stuck p{font-size:15px;color:var(--text-dark);flex:1;min-width:200px}
+
+/* ── BIRTHDAY CALLOUT ── */
+.birthday-callout{margin:0 112px 64px;border:1px solid var(--almond-silk);border-radius:8px;padding:28px 32px;display:flex;align-items:center;gap:24px;background:var(--seashell)}
+.birthday-callout-icon{width:52px;height:52px;border-radius:50%;background:rgba(169,61,43,.12);color:var(--brick-red);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.birthday-callout h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--dark-garnet);margin-bottom:4px}
+.birthday-callout p{font-size:13px;color:var(--text-mid);line-height:1.65}
+.birthday-callout .btn-red{margin-top:12px;font-size:12px;padding:9px 18px}
+
+/* ── CTA SECTION ── */
+.finder-cta-section{background:var(--dark-garnet);margin:0;padding:56px 64px;color:#fff;text-align:center}
+.finder-cta-section .section-eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--almond-silk);margin-bottom:10px;opacity:.8}
+.finder-cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:700;margin-bottom:12px}
+.finder-cta-section p{font-size:15px;color:rgba(255,255,255,.75);max-width:520px;margin:0 auto 28px;line-height:1.7}
+.finder-cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-white{display:inline-block;background:#fff;color:var(--dark-garnet);padding:12px 24px;border-radius:4px;font-size:13px;font-weight:600;text-decoration:none;transition:background .2s}
+.btn-white:hover{background:var(--almond-silk);color:var(--dark-garnet)}
+.btn-outline{display:inline-block;border:1.5px solid rgba(255,255,255,.45);color:#fff;padding:11px 24px;border-radius:4px;font-size:13px;font-weight:600;text-decoration:none;transition:border-color .2s}
+.btn-outline:hover{border-color:#fff}
+@media(max-width:1024px){
+  .finder-intro{padding:28px 24px 0}
+  .finder-filters{padding:20px 24px 28px}
+  .finder-results-header{padding:24px 24px 12px}
+  .prog-grid{padding:0 24px 40px;grid-template-columns:1fr}
+  .no-results{padding:28px 24px}
+  .finder-stuck{margin:0 24px 20px}
+  .birthday-callout{margin:0 24px 40px;flex-direction:column;gap:16px}
+  .finder-cta-section{padding:40px 24px}
+}
+
+
+/* ── BLOCK EDITOR VERSION ── */
+/* Answer chips are Button blocks: the .chip wrapper carries the look (blocks.css) */
+.filter-chips .chip{user-select:none}
+.filter-chips .chip .wp-block-button__link{white-space:nowrap}
+p.filter-label{margin:0}
+
+/* Program cards: status-* class sets the top stripe (was .prog-card-accent) and the badge colours */
+.prog-card::before{content:"";display:block;height:4px;flex-shrink:0}
+.prog-card.status-open::before{background:var(--brick-red)}
+.prog-card.status-assessment::before{background:#c47f00}
+.prog-card.status-invite::before{background:var(--dark-garnet)}
+.prog-card.status-open .prog-badge{background:rgba(169,61,43,.1);color:var(--brick-red)}
+.prog-card.status-assessment .prog-badge{background:rgba(196,127,0,.12);color:#8a5f00}
+.prog-card.status-invite .prog-badge{background:rgba(88,20,9,.1);color:var(--dark-garnet)}
+
+/* Ages / hours icons (were inline SVGs) */
+.prog-meta-item::before{content:"";width:12px;height:12px;flex-shrink:0;background:var(--brick-red);-webkit-mask:var(--asf-icon) center/contain no-repeat;mask:var(--asf-icon) center/contain no-repeat}
+.prog-meta-item.meta-age{--asf-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E")}
+.prog-meta-item.meta-time{--asf-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm.01 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z'/%3E%3C/svg%3E")}
+
+/* "View ..." link: paragraph with a link; arrow drawn by CSS */
+p.prog-link{display:block;margin-top:4px}
+p.prog-link a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--brick-red);text-decoration:none}
+p.prog-link a:hover{color:var(--oxidized-iron)}
+p.prog-link a::after{content:"";width:14px;height:14px;flex-shrink:0;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E") center/contain no-repeat}
+
+/* No-match box: button centred like the original inline link; always visible in the editor so it can be edited */
+.no-results-inner .wp-block-buttons{justify-content:center}
+.editor-styles-wrapper .no-results{display:block}
+
+/* Birthday callout icon (was an inline SVG in .birthday-callout-icon) */
+.birthday-callout::before{content:"";width:52px;height:52px;border-radius:50%;flex-shrink:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23A93D2B' stroke-width='2'%3E%3Cpath d='M20 12V22H4V12'/%3E%3Cpath d='M22 7H2v5h20V7z'/%3E%3Cpath d='M12 22V7'/%3E%3Cpath d='M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z'/%3E%3Cpath d='M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z'/%3E%3C/svg%3E") center/24px 24px no-repeat,rgba(169,61,43,.12)}
+.birthday-callout .wp-block-buttons{display:flex}
+.finder-cta-btns.wp-block-buttons{justify-content:center}

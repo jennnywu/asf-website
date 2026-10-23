@@ -1,0 +1,32 @@
+/* ── coaching-team page (loaded only on this page) ── */
+/* ── TEAM INTRO ── */
+
+.team-intro{padding:48px 64px 0}
+.team-intro p{font-size:15px;line-height:1.8;color:var(--text-mid)}
+
+/* ── COACH LIST ── */
+.team-list{padding:48px 64px 0}
+.coach-card{display:grid;grid-template-columns:220px 1fr;gap:52px;align-items:start;padding:52px 0;border-bottom:1px solid rgba(218,201,198,.45)}
+.coach-card:last-child{border-bottom:none}
+.coach-photo{border-radius:8px;overflow:hidden;background:var(--almond-silk)}
+.coach-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block}
+.coach-info{}
+.coach-name{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--dark-garnet);margin-bottom:6px}
+.coach-title{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brick-red);margin-bottom:20px}
+.coach-bio p{font-size:14px;line-height:1.8;color:var(--text-mid);margin-bottom:12px}
+.coach-bio p:last-child{margin-bottom:0}
+
+/* ── CERT NOTE ── */
+.cert-note{background:var(--seashell);border-top:1px solid var(--almond-silk);padding:36px 64px 80px;margin-top:0}
+.cert-note p{font-size:14px;line-height:1.8;color:var(--text-mid);max-width:760px}
+
+/* ── BLOCK EDITOR VERSION (core image/group blocks) ── */
+.coach-card .coach-photo{margin:0}
+.coach-card:not(:has(.coach-photo)){grid-template-columns:1fr}
+@media(max-width:1024px){
+  .team-intro{padding:32px 24px 0}
+  .team-list{padding:32px 24px 0}
+  .coach-card{grid-template-columns:1fr;gap:28px}
+  .cert-note{padding:28px 24px 60px}
+}
+
