@@ -1,0 +1,12 @@
+{
+  "landingPage": "/coaching-team/",
+  "login": true,
+  "steps": [
+    { "step": "activateTheme", "themeFolderName": "asf-theme" },
+    { "step": "setSiteOptions", "options": { "permalink_structure": "/%postname%/", "blogname": "Academy of Sport and Fitness" } },
+    {
+      "step": "runPHP",
+      "code": "<?php require '/wordpress/wp-load.php'; wp_set_current_user( 1 ); $p = WP_Block_Patterns_Registry::get_instance()->get_registered( 'asf/coaching-team-page' ); wp_insert_post( [ 'post_type' => 'page', 'post_status' => 'publish', 'post_title' => 'Coaching Team', 'post_name' => 'coaching-team', 'post_content' => $p['content'], 'page_template' => 'page-coaching-team.php' ] ); flush_rewrite_rules();"
+    }
+  ]
+}

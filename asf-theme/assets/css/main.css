@@ -786,6 +786,10 @@ svg{display:inline-block;vertical-align:middle;flex-shrink:0}
 /* ── CERT NOTE ── */
 .cert-note{background:var(--seashell);border-top:1px solid var(--almond-silk);padding:36px 64px 80px;margin-top:0}
 .cert-note p{font-size:14px;line-height:1.8;color:var(--text-mid);max-width:760px}
+
+/* ── BLOCK EDITOR VERSION (core image/group blocks) ── */
+.coach-card .coach-photo{margin:0}
+.coach-card:not(:has(.coach-photo)){grid-template-columns:1fr}
 @media(max-width:1024px){
   .team-intro{padding:32px 24px 0}
   .team-list{padding:32px 24px 0}

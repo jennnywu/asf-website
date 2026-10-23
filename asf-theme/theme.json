@@ -31,7 +31,8 @@
       "customFontSize": true
     },
     "spacing": {
-      "customSpacingSize": true
+      "customSpacingSize": true,
+      "blockGap": null
     },
     "layout": {
       "contentSize": "1100px",

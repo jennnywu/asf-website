@@ -1,0 +1,12 @@
+/* ================================================================
+   ASF page editor only (loaded with add_editor_style, never on the live site)
+   ================================================================ */
+
+/* The page title is the page's name in menus and the browser tab;
+   the big heading visitors see is inside the Page header block */
+.editor-visual-editor__post-title-wrapper{padding:20px 24px 12px;border-bottom:1px solid #e0e0e0;margin:0}
+.editor-visual-editor__post-title-wrapper::before{content:"Page name (shown in menus and the browser tab)";display:block;font:600 11px/1.4 'Inter',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#757575;margin-bottom:4px}
+.editor-visual-editor__post-title-wrapper .editor-post-title{font:600 18px/1.4 'Inter',sans-serif;color:#1e1e1e;margin:0}
+
+/* Empty coach photo: keep the upload box the same shape as a real photo */
+.coach-photo .components-placeholder{aspect-ratio:3/4;min-height:0}

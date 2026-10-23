@@ -43,8 +43,55 @@ function asf_theme_setup() {
     register_nav_menus( [
         'primary' => __( 'Primary Navigation', 'asf' ),
     ] );
+
+    // Load the site's own stylesheet in the page editor so it looks like the live page
+    add_theme_support( 'editor-styles' );
+    add_editor_style( [
+        str_replace( ',', '%2C', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap' ),
+        'assets/css/main.css',
+        'assets/css/editor.css',
+    ] );
 }
 add_action( 'after_setup_theme', 'asf_theme_setup' );
+
+/* ── BLOCK PATTERNS ── */
+// Pattern files live in /patterns and are registered by WordPress automatically
+function asf_pattern_category() {
+    register_block_pattern_category( 'asf', [ 'label' => __( 'ASF Gymnastics', 'asf' ) ] );
+}
+add_action( 'init', 'asf_pattern_category' );
+
+// Rendered pattern markup, used as a page's default until the client saves their own content
+function asf_pattern_content( $slug ) {
+    $pattern = WP_Block_Patterns_Registry::get_instance()->get_registered( $slug );
+    return $pattern ? do_blocks( $pattern['content'] ) : '';
+}
+// Block markup for one coach card (shared by the Coach and Coaching Team page patterns)
+function asf_coach_block( $photo, $name, $title, $bio ) {
+    $lock = '"lock":{"move":true,"remove":true}';
+    $out  = '<!-- wp:group {"metadata":{"name":"Coach"},"className":"coach-card","layout":{"type":"default"}} -->' . "\n";
+    $out .= '<div class="wp-block-group coach-card">';
+    $out .= '<!-- wp:image {"sizeSlug":"full",' . $lock . ',"className":"coach-photo"} -->' . "\n";
+    // No photo shows the editor's Upload / Media Library box instead of an image
+    $img  = $photo ? '<img src="' . esc_url( $photo ) . '" alt="' . esc_attr( $name ) . '"/>' : '<img alt=""/>';
+    $out .= '<figure class="wp-block-image size-full coach-photo">' . $img . '</figure>' . "\n";
+    $out .= '<!-- /wp:image -->' . "\n\n";
+    $out .= '<!-- wp:group {"metadata":{"name":"Coach details"},' . $lock . ',"className":"coach-info","layout":{"type":"default"}} -->' . "\n";
+    $out .= '<div class="wp-block-group coach-info">';
+    $out .= '<!-- wp:heading {' . $lock . ',"className":"coach-name"} -->' . "\n";
+    $out .= '<h2 class="wp-block-heading coach-name">' . esc_html( $name ) . '</h2>' . "\n";
+    $out .= '<!-- /wp:heading -->' . "\n\n";
+    $out .= '<!-- wp:paragraph {' . $lock . ',"className":"coach-title"} -->' . "\n";
+    $out .= '<p class="coach-title">' . esc_html( $title ) . '</p>' . "\n";
+    $out .= '<!-- /wp:paragraph -->' . "\n\n";
+    $out .= '<!-- wp:group {"metadata":{"name":"Coach bio"},' . $lock . ',"className":"coach-bio","layout":{"type":"default"}} -->' . "\n";
+    $out .= '<div class="wp-block-group coach-bio">';
+    foreach ( $bio as $para ) {
+        $out .= '<!-- wp:paragraph -->' . "\n" . '<p>' . esc_html( $para ) . '</p>' . "\n" . '<!-- /wp:paragraph -->' . "\n\n";
+    }
+    $out .= '</div>' . "\n" . '<!-- /wp:group --></div>' . "\n" . '<!-- /wp:group --></div>' . "\n" . '<!-- /wp:group -->' . "\n\n";
+    return $out;
+}
 
 /* ── ADMIN BAR OFFSET ── */
 function asf_admin_bar_css() {
